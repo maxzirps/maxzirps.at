@@ -1,33 +1,112 @@
 ---
-// Component Imports
-import Counter from '../components/Counter';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import "@fontsource-variable/work-sans";
+import "@fontsource/lato";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<Counter client:visible>
-				<h1>Hello, Solid!</h1>
-			</Counter>
-		</main>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      body {
+        font-family: "Work Sans", sans-serif, system-ui;
+        line-height: 1.6;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Lato", sans-serif, system-ui;
+        font-weight: 500;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      h3 {
+        font-size: 1.75rem;
+      }
+
+      h4 {
+        font-size: 1.5rem;
+      }
+
+      h5 {
+        font-size: 1.25rem;
+      }
+
+      h6 {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flex h-screen">
+      <div class="p-8 m-auto w-96 bg-white flex flex-col rounded">
+        <h1
+          class="bg-clip-text text-transparent bg-gradient-to-br from-indigo-500 from-10% via-sky-500 via-30% to-emerald-400 to-90%"
+        >
+          Maximilian Zirps
+        </h1>
+        <p class="text-xl">Software Engineer</p>
+        <div class="mt-6">
+          <div class="mb-2">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/in/maximilian-zirps/"
+              aria-label="Go to my LinkedIn page"
+              class="hover:text-indigo-500 transition-colors ease-in-out duration-300"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="feather feather-linkedin h-6 w-6 inline-block"
+                ><path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                ></path><circle cx="4" cy="4" r="2"></circle></svg
+              ><span class="ml-2 align-sub">maximilian-zirps</span>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/maxzirps"
+              aria-label="Go to my Github page"
+              class="hover:text-indigo-500 transition-colors ease-in-out duration-300"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="feather feather-github h-6 w-6 inline-block"
+                ><path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path></svg
+              ><span class="ml-2 align-sub">maxzirps</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

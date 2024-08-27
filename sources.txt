@@ -1,0 +1,1 @@
+favicon.svg: https://www.svgrepo.com/svg/73490/paper-plane
