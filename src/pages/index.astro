@@ -1,7 +1,21 @@
 ---
-import "@fontsource-variable/work-sans";
-import "@fontsource/lato";
-import "@fontsource/merriweather";
+import "@fontsource-variable/exo-2";
+import "@fontsource/palanquin/100.css";
+import "@fontsource/palanquin/200.css";
+import "@fontsource/palanquin/300.css";
+import "@fontsource/palanquin/400.css";
+import "@fontsource/palanquin/500.css";
+import "@fontsource/palanquin/600.css";
+import "@fontsource/palanquin/700.css";
+import "@fontsource/merriweather/300.css";
+import "@fontsource/merriweather/400.css";
+import "@fontsource/merriweather/700.css";
+import "@fontsource/merriweather/900.css";
+import { Image } from "astro:assets";
+import myImage from "../assets/me.png";
+import teamImage from "../assets/undraw_engineering_team_a7n2.svg";
+import appsImage from "../assets/undraw_website_ij0l.svg";
+import TechIcons from "../components/TechIcons";
 ---
 
 <html lang="en">
@@ -13,157 +27,389 @@ import "@fontsource/merriweather";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
       body {
-        font-family: "Lato", sans-serif, system-ui;
+        font-family: "Palanquin", sans-serif;
       }
-      h1,
+      h1 {
+        font-family: "Exo 2 Variable", sans-serif, system-ui;
+      }
       h2,
       h3,
       h4,
       h5,
       h6 {
-        font-family: "Merriweather", serif, system-ui;
+        font-family: "Merriweather", serif;
       }
     </style>
   </head>
   <body>
     <header
-      class="bg-gradient-to-b from-indigo-800 to-cyan-400 h-screen flex items-center justify-center text-center text-white"
+      class="h-screen flex items-center justify-center lg:text-left bg-[url('/img/iphone2.png')] bg-cover bg-no-repeat
+      bg-[center_left_4rem] lg:bg-none"
     >
-      <div class="mx-auto px-6">
-        <h1 class="text-4xl md:text-5xl">
-          Hello, I'm <span
-            class="font-bold drop-shadow-lg tracking-wide leading-tight"
-            >Maximilian Zirps</span
-          >
+      <div
+        class="m-auto lg:bg-[url('/img/iphone.png')] bg-contain bg-no-repeat bg-right w-[90%] 2xl:w-auto p-2 lg:p-6"
+      >
+        <h1 class="text-5xl tracking-wide leading-tight text-gray-800 mb-6">
+          Turning
+          <div class="relative inline-block">
+            <span class="font-semibold bg-white">Your Vision</span>
+            <span
+              class="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-cyan-300"
+            ></span>
+          </div>
+          <br class="xl:hidden" />
+          into Reality
         </h1>
 
-        <p class="text-lg md:text-2xl mt-4 font-light">
-          Freelance Fullstack Developer
+        <div class="mt-6 hidden lg:block">
+          <a
+            href="#contact"
+            class="inline-flex items-center border border-black py-2 px-4 rounded-sm text-lg font-semibold hover:bg-black hover:text-white transition duration-300"
+          >
+            Let's Get Started
+          </a>
+        </div>
+
+        <p class="text-lg w-[75%] lg:w-2/5 lg:mt-16 leading-relaxed">
+          I craft lightweight, fast, and adaptable solutions designed to make
+          your vision work seamlessly. My approach ensures that your projects
+          are not only efficient but also flexible, meeting the evolving needs
+          of your business with precision and agility.
         </p>
 
-        <p
-          class="text-lg md:text-xl mt-4 flex items-center justify-center space-x-2"
-        >
-          <span>Crafting</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6 text-yellow-300"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
-            ></path>
-          </svg>
-          <span>Lightweight, Fast, and Adaptable Solutions</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-          </svg>
-          <span>Built for People.</span>
-        </p>
+        <div class="mt-16">
+          <h2 class="text-2xl text-gray-800">Maximilian Zirps</h2>
+          <p class="font-heading2 font-thin">Software Engineer</p>
+        </div>
 
-        <a
-          href="#contact"
-          class="mt-8 inline-block bg-orange-500 text-white py-3 px-8 text-lg rounded-md shadow-md hover:scale-105 transition-transform"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6 inline mr-2"
+        <div class="mt-16">
+          <a
+            href="#contact"
+            class="lg:hidden bottom-0 border border-black py-2 px-4 rounded-sm text-lg font-semibold"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
-            ></path>
-          </svg>
-          Let's Chat
-        </a>
+            Let's Get Started
+          </a>
+        </div>
       </div>
-      <svg
-        id="wave"
-        viewBox="0 0 1440 130"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        class="absolute inset-x-0 bottom-0"
-      >
-        <defs>
-          <linearGradient id="wave-gradient" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="0%" stop-color="#00B2FF"></stop>
-            <stop offset="100%" stop-color="#0047AB"></stop>
-          </linearGradient>
-        </defs>
-        <path
-          fill="url(#wave-gradient)"
-          d="M0,65L24,65C48,65,96,65,144,54.2C192,43,240,22,288,23.8C336,26,384,52,432,52C480,52,528,26,576,17.3C624,9,672,17,720,23.8C768,30,816,35,864,49.8C912,65,960,91,1008,99.7C1056,108,1104,100,1152,80.2C1200,61,1248,30,1296,23.8C1344,17,1392,35,1440,43.3C1488,52,1536,52,1584,43.3C1632,35,1680,17,1728,21.7C1776,26,1824,52,1872,67.2C1920,82,1968,87,2016,82.3C2064,78,2112,65,2160,54.2C2208,43,2256,35,2304,43.3C2352,52,2400,78,2448,84.5C2496,91,2544,78,2592,60.7C2640,43,2688,22,2736,15.2C2784,9,2832,17,2880,17.3C2928,17,2976,9,3024,19.5C3072,30,3120,61,3168,71.5C3216,82,3264,74,3312,71.5C3360,69,3408,74,3432,75.8L3456,78L3456,130L3432,130C3408,130,3360,130,3312,130C3264,130,3216,130,3168,130C3120,130,3072,130,3024,130C2976,130,2928,130,2880,130C2832,130,2784,130,2736,130C2688,130,2640,130,2592,130C2544,130,2496,130,2448,130C2400,130,2352,130,2304,130C2256,130,2208,130,2160,130C2112,130,2064,130,2016,130C1968,130,1920,130,1872,130C1824,130,1776,130,1728,130C1680,130,1632,130,1584,130C1536,130,1488,130,1440,130C1392,130,1344,130,1296,130C1248,130,1200,130,1152,130C1104,130,1056,130,1008,130C960,130,912,130,864,130C816,130,768,130,720,130C672,130,624,130,576,130C528,130,480,130,432,130C384,130,336,130,288,130C240,130,192,130,144,130C96,130,48,130,24,130L0,130Z"
-        ></path>
-      </svg>
     </header>
-
-    <section id="contact" class="py-16 bg-none">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl">Get in Touch</h2>
-        <form
-          action="#"
-          method="post"
-          class="contact-form mt-8 max-w-lg mx-auto"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            class="w-full p-4 border border-gray-300"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            class="w-full p-4 border border-gray-300 mt-4"
-          />
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            class="w-full p-4 border border-gray-300 mt-4"
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            class="w-full p-4 border border-gray-300 mt-4"></textarea>
-          <button
-            type="submit"
-            class="w-full text-white py-4 mt-4 transition inline-block bg-orange-500 g rounded-md shadow-md hover:bg-orange-600"
-            >Send Message</button
-          >
-        </form>
+    <section
+      class="lg:h-screen flex items-center justify-center bg-gray-100 text-center lg:text-left"
+    >
+      <div class="m-auto w-[90%] 2xl:w-auto p-6">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h1 class="sm:text-3xl text-2xl mb-2 text-gray-900">What I do</h1>
+          <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0"></div>
+        </div>
+        <div class="text-gray-600">
+          <div class="container px-5 p-6 lg:py-24 mx-auto">
+            <div class="flex flex-wrap -m-4">
+              <div class="md:w-1/2 p-4">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                  <Image
+                    src={appsImage}
+                    alt="A description of my image."
+                    class="h-40 rounded w-full mb-6"
+                  />
+                  <h2 class="text-lg text-gray-900 font-medium mb-4">
+                    Custom Web Applications
+                  </h2>
+                  <p class="leading-relaxed text-base">
+                    I specialize in building dynamic, user-friendly web
+                    applications tailored to your unique needs. From front-end
+                    interfaces to back-end systems, I create scalable, secure,
+                    and high-performance solutions that drive your business
+                    forward. Whether you need a new web app or enhancements to
+                    an existing one, I deliver reliable, clean code and a
+                    seamless user experience.
+                  </p>
+                  <TechIcons classes="size-6 inline mr-2 mt-6" />
+                </div>
+              </div>
+              <div class="md:w-1/2 p-4">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                  <Image
+                    src={teamImage}
+                    alt="A description of my image."
+                    class="h-40 rounded w-full mb-6"
+                  />
+                  <h2 class="text-lg text-gray-900 font-medium mb-4">
+                    Boost Your Team
+                  </h2>
+                  <p class="leading-relaxed text-base">
+                    Need to enhance your team’s coding productivity and quality?
+                    I provide hands-on support to development teams, assisting
+                    with writing, optimizing, and debugging code. With expertise
+                    in best practices and clean coding, I help your team tackle
+                    complex tasks, fix issues faster, and improve overall code
+                    quality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <footer class="py-8 bg-white text-slate-600 text-center">
-      <p>&copy; 2024 Maximilian Zirps. All rights reserved.</p>
-      <div class="mt-4">
-        <a href="#" class="mx-2">LinkedIn</a>
-        <a href="#" class="mx-2">GitHub</a>
-        <a href="#" class="mx-2">Twitter</a>
+    <section
+      class="lg:h-screen flex items-center justify-center text-center lg:text-left"
+    >
+      <div class="m-auto w-[90%] 2xl:w-auto p-6">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h1 class="sm:text-3xl text-2xl mb-2 text-gray-900">
+            Latest Articles
+          </h1>
+          <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0"></div>
+        </div>
+        <div class="text-gray-600 body-font overflow-hidden lg:ml-60">
+          <div class="container px-5 p-6 lg:py-24 mx-auto">
+            <div class="-my-8 divide-y-2 divide-gray-100">
+              <div class="py-8 flex flex-wrap md:flex-nowrap">
+                <div class="md:flex-grow">
+                  <h2
+                    class="text-2xl font-medium text-gray-900 title-font mb-2"
+                  >
+                    Bitters hashtag waistcoat fashion axe chia unicorn
+                  </h2>
+                  <p class="leading-relaxed">
+                    Glossier echo park pug, church-key sartorial biodiesel
+                    vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf
+                    moon party messenger bag selfies, poke vaporware kombucha
+                    lumbersexual pork belly polaroid hoodie portland craft beer.
+                  </p>
+                  <a class="text-blue-800 inline-flex items-center mt-4"
+                    >Learn More
+                    <svg
+                      class="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="py-8 flex flex-wrap md:flex-nowrap">
+                <div class="md:flex-grow">
+                  <h2
+                    class="text-2xl font-medium text-gray-900 title-font mb-2"
+                  >
+                    Meditation bushwick direct trade taxidermy shaman
+                  </h2>
+                  <p class="leading-relaxed">
+                    Glossier echo park pug, church-key sartorial biodiesel
+                    vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf
+                    moon party messenger bag selfies, poke vaporware kombucha
+                    lumbersexual pork belly polaroid hoodie portland craft beer.
+                  </p>
+                  <a class="text-blue-800 inline-flex items-center mt-4"
+                    >Learn More
+                    <svg
+                      class="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="py-8 flex flex-wrap md:flex-nowrap">
+                <div class="md:flex-grow">
+                  <h2
+                    class="text-2xl font-medium text-gray-900 title-font mb-2"
+                  >
+                    Woke master cleanse drinking vinegar salvia
+                  </h2>
+                  <p class="leading-relaxed">
+                    Glossier echo park pug, church-key sartorial biodiesel
+                    vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf
+                    moon party messenger bag selfies, poke vaporware kombucha
+                    lumbersexual pork belly polaroid hoodie portland craft beer.
+                  </p>
+                  <a class="text-blue-800 inline-flex items-center mt-4"
+                    >Learn More
+                    <svg
+                      class="w-4 h-4 ml-2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+    <footer>
+      <section
+        class="h-screen flex items-center justify-center text-center lg:text-left"
+      >
+        <div class="m-auto w-[90%] 2xl:w-auto p-6">
+          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <h1 class="sm:text-3xl text-2xl mb-2 text-gray-900">Contact</h1>
+            <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0"></div>
+          </div>
+          <div class="text-gray-600 body-font relative">
+            <div class="container px-5 p-6 lg:py-24 mx-auto">
+              <div class="flex flex-col text-center w-full mb-12">
+                <h1
+                  class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+                >
+                  Contact Us
+                </h1>
+                <Image
+                  src={myImage}
+                  alt="A description of my image."
+                  width={300}
+                  class="rounded-full m-auto"
+                  hidden
+                />
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+                  Whatever cardigan tote bag tumblr hexagon brooklyn
+                  asymmetrical gentrify.
+                </p>
+              </div>
+              <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <div class="flex flex-wrap -m-2">
+                  <div class="p-2 w-1/2">
+                    <div class="relative">
+                      <label for="name" class="leading-7 text-sm text-gray-600"
+                        >Name</label
+                      >
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-2 w-1/2">
+                    <div class="relative">
+                      <label for="email" class="leading-7 text-sm text-gray-600"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      />
+                    </div>
+                  </div>
+                  <div class="p-2 w-full">
+                    <div class="relative">
+                      <label
+                        for="message"
+                        class="leading-7 text-sm text-gray-600">Message</label
+                      >
+                      <textarea
+                        id="message"
+                        name="message"
+                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="p-2 w-full">
+                    <button
+                      class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-blue-800 rounded text-lg"
+                      >Button</button
+                    >
+                  </div>
+                  <div
+                    class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+                  >
+                    <a class="text-blue-500">example@email.com</a>
+                    <p class="leading-normal my-5">
+                      49 Smith St.
+                      <br />Saint Cloud, MN 56301
+                    </p>
+                    <span class="inline-flex">
+                      <a class="text-gray-500">
+                        <svg
+                          fill="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="w-5 h-5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                          ></path>
+                        </svg>
+                      </a>
+                      <a class="ml-4 text-gray-500">
+                        <svg
+                          fill="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="w-5 h-5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                          ></path>
+                        </svg>
+                      </a>
+                      <a class="ml-4 text-gray-500">
+                        <svg
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="w-5 h-5"
+                          viewBox="0 0 24 24"
+                        >
+                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+                          ></rect>
+                          <path
+                            d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                          ></path>
+                        </svg>
+                      </a>
+                      <a class="ml-4 text-gray-500">
+                        <svg
+                          fill="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="w-5 h-5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                          ></path>
+                        </svg>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </footer>
   </body>
 </html>
