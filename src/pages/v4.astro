@@ -1,0 +1,115 @@
+---
+import "@fontsource-variable/work-sans";
+import "@fontsource/lato";
+import "@fontsource/merriweather";
+import "@fontsource-variable/exo-2";
+import "@fontsource/cormorant-garamond/300.css";
+import "@fontsource/cormorant-garamond/400.css";
+import "@fontsource/palanquin";
+---
+
+<html lang="en">
+  <head>
+    <title>Maximilian Zirps</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      body {
+        font-family: "Palanquin", sans-serif;
+      }
+      h1 {
+        font-family: "Exo 2 Variable", sans-serif, system-ui;
+      }
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Cormorant Garamond", serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="h-screen flex items-center justify-center text-center bg-primary"
+    >
+      <div class="mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl text-textPrimary m-0">
+          <span class="tracking-wide leading-tight text-accent"
+            >Maximilian Zirps</span
+          >
+        </h1>
+
+        <h2 class="text-lg md:text-2xl m-0 font-light text-textSecondary">
+          Software Craftsman
+        </h2>
+
+        <p
+          class="text-lg md:text-xl mt-4 flex items-center justify-center space-x-2 text-textSecondary"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-highlight"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+            ></path>
+          </svg>
+          <span>Lightweight, Fast, and Adaptable Solutions</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-textSecondary"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+          </svg>
+          <span>Built for People.</span>
+        </p>
+
+        <a
+          href="#contact"
+          class="mt-8 inline-block py-3 px-8 text-lg text-white bg-accent border border-border hover:bg-highlight hover:scale-105 transition-transform"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 inline mr-2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+            ></path>
+          </svg>
+          Let's Chat
+        </a>
+      </div>
+    </header>
+
+    <footer class="py-8 bg-white text-slate-600 text-center">
+      <p>&copy; 2024 Maximilian Zirps. All rights reserved.</p>
+      <div class="mt-4">
+        <a href="#" class="mx-2">LinkedIn</a>
+        <a href="#" class="mx-2">GitHub</a>
+        <a href="#" class="mx-2">Twitter</a>
+      </div>
+    </footer>
+  </body>
+</html>
