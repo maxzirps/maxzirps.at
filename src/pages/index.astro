@@ -13,9 +13,12 @@ import "@fontsource/merriweather/700.css";
 import "@fontsource/merriweather/900.css";
 import { Image } from "astro:assets";
 import myImage from "../assets/me.png";
-import teamImage from "../assets/undraw_engineering_team_a7n2.svg";
-import appsImage from "../assets/undraw_website_ij0l.svg";
+import teamDarkImage from "../assets/team_dark2.svg";
+import websiteDarkImage from "../assets/website_dark2.svg";
+import teamImage from "../assets/team.svg";
+import websiteImage from "../assets/website.svg";
 import TechIcons from "../components/TechIcons";
+import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
 <html lang="en">
@@ -29,57 +32,113 @@ import TechIcons from "../components/TechIcons";
       body {
         font-family: "Palanquin", sans-serif;
       }
-      h1 {
+      h1,
+      h2 {
         font-family: "Exo 2 Variable", sans-serif, system-ui;
       }
-      h2,
       h3,
       h4,
       h5,
       h6 {
         font-family: "Merriweather", serif;
       }
+
+      @keyframes bounceX {
+        0%,
+        100% {
+          transform: translateX(0%);
+          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+        }
+        50% {
+          transform: translateX(5%);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        }
+      }
     </style>
   </head>
-  <body>
-    <header
-      class="h-screen flex items-center justify-center lg:text-left bg-[url('/img/iphone2.png')] bg-cover bg-no-repeat
-      bg-[center_left_4rem] lg:bg-none"
+  <body class="dark:bg-black dark:text-slate-50">
+    <header>
+      <div
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center h-[10vh]"
+      >
+        <a
+          class="flex items-center text-gray-900 mb-4 md:mb-0 dark:text-white cursor-pointer"
+        >
+          <span class="text-2xl font-heading2 p-2">MZ</span>
+          <span class="text-xl font-heading p-2">Maximilian Zirps</span>
+        </a>
+        <nav
+          class="md:ml-auto flex flex-wrap items-center text-base justify-center dark:text-zinc-50"
+        >
+          <a
+            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer underline-offset-8 hover:underline dark:decoration-white"
+            >Services</a
+          >
+          <a
+            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer underline-offset-8 hover:underline dark:decoration-white"
+            >Blog</a
+          >
+          <a
+            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer underline-offset-8 hover:underline dark:decoration-white"
+            >Contact</a
+          >
+        </nav>
+        <div
+          class="flex items-center border-l border-slate-200 ml-2 pl-4 dark:border-cyan-200"
+        >
+          <ThemeIcon />
+        </div>
+      </div>
+    </header>
+    <section
+      class="h-[90vh] flex items-center justify-center lg:text-left bg-[url('/img/iphone2.png')] bg-cover bg-no-repeat
+      bg-[center_left_4rem] lg:bg-none p-6"
     >
       <div
-        class="m-auto lg:bg-[url('/img/iphone.png')] bg-contain bg-no-repeat bg-right w-[90%] 2xl:w-auto p-2 lg:p-6"
+        class="m-auto lg:bg-[url('/img/iphone.png')] bg-contain bg-no-repeat bg-right w-[80%] 2xl:w-auto p-2 lg:p-6"
       >
-        <h1 class="text-5xl tracking-wide leading-tight text-gray-800 mb-6">
+        <h1
+          class="text-5xl tracking-wide leading-tight text-gray-800 mb-6 dark:text-white"
+        >
           Turning
           <div class="relative inline-block">
-            <span class="font-semibold bg-white">Your Vision</span>
+            <span class="font-semibold bg-white dark:bg-transparent"
+              >Your Vision</span
+            >
             <span
-              class="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-700 to-cyan-300"
+              class="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-blue-700 to-cyan-300 animate-[expand_400ms_cubic-bezier(0.42,_0,_0.58,_1)_200ms_forwards]"
             ></span>
           </div>
           <br class="xl:hidden" />
           into Reality
         </h1>
+        <h2
+          class="text-2xl tracking-widest leading-tight text-gray-700 mb-6 dark:text-slate-50"
+        >
+          Lightweight. Fast. Adaptable.
+        </h2>
 
-        <div class="mt-6 hidden lg:block">
+        <div class="mt-16 hidden lg:block">
           <a
             href="#contact"
-            class="inline-flex items-center border border-black py-2 px-4 rounded-sm text-lg font-semibold hover:bg-black hover:text-white transition duration-300"
+            class="border-black inline-flex items-center border py-4 px-4 rounded text-lg hover:bg-black hover:text-white transition duration-300 dark:border-slate-100 dark:hover:bg-white dark:hover:text-black"
           >
-            Let's Get Started
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1"
+              stroke="currentColor"
+              class="size-8 text-cyan-600 animate-[bounceX_2s_linear_3000ms_infinite]"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+            </svg>
+
+            <span class="mx-2"> Let's Get Started </span>
           </a>
-        </div>
-
-        <p class="text-lg w-[75%] lg:w-2/5 lg:mt-16 leading-relaxed">
-          I craft lightweight, fast, and adaptable solutions designed to make
-          your vision work seamlessly. My approach ensures that your projects
-          are not only efficient but also flexible, meeting the evolving needs
-          of your business with precision and agility.
-        </p>
-
-        <div class="mt-16">
-          <h2 class="text-2xl text-gray-800">Maximilian Zirps</h2>
-          <p class="font-heading2 font-thin">Software Engineer</p>
         </div>
 
         <div class="mt-16">
@@ -91,58 +150,75 @@ import TechIcons from "../components/TechIcons";
           </a>
         </div>
       </div>
-    </header>
-    <section
-      class="lg:h-screen flex items-center justify-center bg-gray-100 text-center lg:text-left"
-    >
-      <div class="m-auto w-[90%] 2xl:w-auto p-6">
-        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h1 class="sm:text-3xl text-2xl mb-2 text-gray-900">What I do</h1>
-          <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0"></div>
-        </div>
-        <div class="text-gray-600">
-          <div class="container px-5 p-6 lg:py-24 mx-auto">
-            <div class="flex flex-wrap -m-4">
-              <div class="md:w-1/2 p-4">
-                <div class="bg-gray-100 p-6 rounded-lg">
-                  <Image
-                    src={appsImage}
-                    alt="A description of my image."
-                    class="h-40 rounded w-full mb-6"
-                  />
-                  <h2 class="text-lg text-gray-900 font-medium mb-4">
-                    Custom Web Applications
-                  </h2>
-                  <p class="leading-relaxed text-base">
-                    I specialize in building dynamic, user-friendly web
-                    applications tailored to your unique needs. From front-end
-                    interfaces to back-end systems, I create scalable, secure,
-                    and high-performance solutions that drive your business
-                    forward. Whether you need a new web app or enhancements to
-                    an existing one, I deliver reliable, clean code and a
-                    seamless user experience.
-                  </p>
-                  <TechIcons classes="size-6 inline mr-2 mt-6" />
-                </div>
+    </section>
+    <section class="m-auto w-[80%] 2xl:w-auto p-6">
+      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+        <h2 class="sm:text-3xl text-2xl mb-2 text-gray-900 dark:text-white">
+          What I do
+        </h2>
+        <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0 dark:bg-cyan-400"></div>
+      </div>
+      <div class="text-gray-600">
+        <div class="container px-5 p-6 lg:py-24 mx-auto">
+          <div class="flex flex-wrap -m-4">
+            <div class="md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg h-full">
+                <Image
+                  src={websiteImage}
+                  alt="A description of my image."
+                  class="h-40 rounded w-full mb-6 dark:hidden"
+                />
+                <Image
+                  src={websiteDarkImage}
+                  alt="A description of my image."
+                  class="h-40 rounded w-full mb-6 dark:block hidden"
+                />
+                <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
+                  Custom Web Applications
+                </h2>
+                <p class="leading-relaxed text-base">
+                  I specialize in building dynamic, user-friendly web
+                  applications tailored to your unique needs. From front-end
+                  interfaces to back-end systems, I create scalable, secure, and
+                  high-performance solutions that drive your business forward.
+                  Whether you need a new web app or enhancements to an existing
+                  one, I deliver reliable, clean code and a seamless user
+                  experience.
+                </p>
               </div>
-              <div class="md:w-1/2 p-4">
-                <div class="bg-gray-100 p-6 rounded-lg">
-                  <Image
-                    src={teamImage}
-                    alt="A description of my image."
-                    class="h-40 rounded w-full mb-6"
-                  />
-                  <h2 class="text-lg text-gray-900 font-medium mb-4">
-                    Boost Your Team
-                  </h2>
-                  <p class="leading-relaxed text-base">
-                    Need to enhance your team’s coding productivity and quality?
-                    I provide hands-on support to development teams, assisting
-                    with writing, optimizing, and debugging code. With expertise
-                    in best practices and clean coding, I help your team tackle
-                    complex tasks, fix issues faster, and improve overall code
-                    quality.
-                  </p>
+            </div>
+            <div class="md:w-1/2 p-4">
+              <div class="bg-gray-100 p-6 rounded-lg h-full">
+                <Image
+                  src={teamImage}
+                  alt="A description of my image."
+                  class="h-40 rounded w-full mb-6 dark:hidden"
+                />
+                <Image
+                  src={teamDarkImage}
+                  alt="A description of my image."
+                  class="h-40 rounded w-full mb-6 dark:block hidden"
+                />
+                <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
+                  Boost Your Team
+                </h2>
+                <p class="leading-relaxed text-base">
+                  Need to enhance your team’s coding productivity and quality? I
+                  provide hands-on support to development teams, assisting with
+                  writing, optimizing, and debugging code. With expertise in
+                  best practices and clean coding, I help your team tackle
+                  complex tasks, fix issues faster, and improve overall code
+                  quality.
+                </p>
+              </div>
+            </div>
+            <div class="p-4 w-3/5 mx-auto text-center">
+              <div class="p-6 w-full">
+                <p class="text-gray-900 mb-2 dark:text-zinc-100">
+                  with business-proven tools
+                </p>
+                <div>
+                  <TechIcons classes="size-6 inline mr-2" />
                 </div>
               </div>
             </div>
@@ -153,30 +229,33 @@ import TechIcons from "../components/TechIcons";
     <section
       class="lg:h-screen flex items-center justify-center text-center lg:text-left"
     >
-      <div class="m-auto w-[90%] 2xl:w-auto p-6">
+      <div class="m-auto w-[80%] 2xl:w-auto p-6">
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h1 class="sm:text-3xl text-2xl mb-2 text-gray-900">
+          <h2 class="sm:text-3xl text-2xl mb-2 text-gray-900 dark:text-white">
             Latest Articles
-          </h1>
-          <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0"></div>
+          </h2>
+          <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0 dark:bg-cyan-400">
+          </div>
         </div>
-        <div class="text-gray-600 body-font overflow-hidden lg:ml-60">
+        <div class="text-gray-600 body-font overflow-hidden">
           <div class="container px-5 p-6 lg:py-24 mx-auto">
             <div class="-my-8 divide-y-2 divide-gray-100">
               <div class="py-8 flex flex-wrap md:flex-nowrap">
                 <div class="md:flex-grow">
-                  <h2
-                    class="text-2xl font-medium text-gray-900 title-font mb-2"
+                  <h3
+                    class="text-2xl font-medium text-gray-900 title-font mb-2 dark:text-zinc-50"
                   >
-                    Bitters hashtag waistcoat fashion axe chia unicorn
-                  </h2>
-                  <p class="leading-relaxed">
-                    Glossier echo park pug, church-key sartorial biodiesel
-                    vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf
-                    moon party messenger bag selfies, poke vaporware kombucha
-                    lumbersexual pork belly polaroid hoodie portland craft beer.
+                    10 Essential Tips for Optimizing Web Performance in 2024
+                  </h3>
+                  <p class="leading-relaxed dark:text-slate-50">
+                    Discover the latest techniques for speeding up your website
+                    and improving user experience in 2024. From lazy loading
+                    images to leveraging modern JavaScript frameworks, these 10
+                    tips will help you enhance your site's performance and keep
+                    your visitors engaged.
                   </p>
-                  <a class="text-blue-800 inline-flex items-center mt-4"
+                  <a
+                    class="text-blue-800 dark:text-cyan-400 inline-flex items-center mt-4"
                     >Learn More
                     <svg
                       class="w-4 h-4 ml-2"
@@ -195,18 +274,20 @@ import TechIcons from "../components/TechIcons";
               </div>
               <div class="py-8 flex flex-wrap md:flex-nowrap">
                 <div class="md:flex-grow">
-                  <h2
-                    class="text-2xl font-medium text-gray-900 title-font mb-2"
+                  <h3
+                    class="text-2xl font-medium text-gray-900 title-font mb-2 dark:text-zinc-50"
                   >
-                    Meditation bushwick direct trade taxidermy shaman
-                  </h2>
-                  <p class="leading-relaxed">
-                    Glossier echo park pug, church-key sartorial biodiesel
-                    vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf
-                    moon party messenger bag selfies, poke vaporware kombucha
-                    lumbersexual pork belly polaroid hoodie portland craft beer.
+                    10 Essential Tips for Optimizing Web Performance in 2024
+                  </h3>
+                  <p class="leading-relaxed dark:text-slate-50">
+                    Discover the latest techniques for speeding up your website
+                    and improving user experience in 2024. From lazy loading
+                    images to leveraging modern JavaScript frameworks, these 10
+                    tips will help you enhance your site's performance and keep
+                    your visitors engaged.
                   </p>
-                  <a class="text-blue-800 inline-flex items-center mt-4"
+                  <a
+                    class="text-blue-800 dark:text-cyan-400 inline-flex items-center mt-4"
                     >Learn More
                     <svg
                       class="w-4 h-4 ml-2"
@@ -225,18 +306,20 @@ import TechIcons from "../components/TechIcons";
               </div>
               <div class="py-8 flex flex-wrap md:flex-nowrap">
                 <div class="md:flex-grow">
-                  <h2
-                    class="text-2xl font-medium text-gray-900 title-font mb-2"
+                  <h3
+                    class="text-2xl font-medium text-gray-900 title-font mb-2 dark:text-zinc-50"
                   >
-                    Woke master cleanse drinking vinegar salvia
-                  </h2>
-                  <p class="leading-relaxed">
-                    Glossier echo park pug, church-key sartorial biodiesel
-                    vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf
-                    moon party messenger bag selfies, poke vaporware kombucha
-                    lumbersexual pork belly polaroid hoodie portland craft beer.
+                    10 Essential Tips for Optimizing Web Performance in 2024
+                  </h3>
+                  <p class="leading-relaxed dark:text-slate-50">
+                    Discover the latest techniques for speeding up your website
+                    and improving user experience in 2024. From lazy loading
+                    images to leveraging modern JavaScript frameworks, these 10
+                    tips will help you enhance your site's performance and keep
+                    your visitors engaged.
                   </p>
-                  <a class="text-blue-800 inline-flex items-center mt-4"
+                  <a
+                    class="text-blue-800 dark:text-cyan-400 inline-flex items-center mt-4"
                     >Learn More
                     <svg
                       class="w-4 h-4 ml-2"
@@ -258,158 +341,170 @@ import TechIcons from "../components/TechIcons";
         </div>
       </div>
     </section>
-    <footer>
-      <section
-        class="h-screen flex items-center justify-center text-center lg:text-left"
-      >
-        <div class="m-auto w-[90%] 2xl:w-auto p-6">
-          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-            <h1 class="sm:text-3xl text-2xl mb-2 text-gray-900">Contact</h1>
-            <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0"></div>
+  </body>
+  <footer>
+    <section
+      class="h-screen flex items-center justify-center text-center lg:text-left"
+    >
+      <div class="m-auto w-[80%] 2xl:w-auto p-6">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h2 class="sm:text-3xl text-2xl mb-2 text-gray-900 dark:text-white">
+            Contact
+          </h2>
+          <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0 dark:bg-cyan-400">
           </div>
-          <div class="text-gray-600 body-font relative">
-            <div class="container px-5 p-6 lg:py-24 mx-auto">
-              <div class="flex flex-col text-center w-full mb-12">
-                <h1
-                  class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
-                >
-                  Contact Us
-                </h1>
-                <Image
-                  src={myImage}
-                  alt="A description of my image."
-                  width={300}
-                  class="rounded-full m-auto"
-                  hidden
-                />
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-                  Whatever cardigan tote bag tumblr hexagon brooklyn
-                  asymmetrical gentrify.
-                </p>
-              </div>
-              <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                <div class="flex flex-wrap -m-2">
-                  <div class="p-2 w-1/2">
-                    <div class="relative">
-                      <label for="name" class="leading-7 text-sm text-gray-600"
-                        >Name</label
-                      >
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                      />
-                    </div>
-                  </div>
-                  <div class="p-2 w-1/2">
-                    <div class="relative">
-                      <label for="email" class="leading-7 text-sm text-gray-600"
-                        >Email</label
-                      >
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                      />
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label
-                        for="message"
-                        class="leading-7 text-sm text-gray-600">Message</label
-                      >
-                      <textarea
-                        id="message"
-                        name="message"
-                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <button
-                      class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-blue-800 rounded text-lg"
-                      >Button</button
+        </div>
+        <div class="text-gray-600 body-font relative">
+          <div class="container px-5 p-6 lg:py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12">
+              <h1
+                class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-zinc-50"
+              >
+                Contact Us
+              </h1>
+              <Image
+                src={myImage}
+                alt="A description of my image."
+                width={300}
+                class="rounded-full m-auto"
+                hidden
+              />
+              <p
+                class="lg:w-2/3 mx-auto leading-relaxed text-base dark:text-slate-50"
+              >
+                Your tech journey starts with a message — reach out to explore
+                solutions, ask questions, or just get the conversation started!
+              </p>
+            </div>
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+              <div class="flex flex-wrap -m-2">
+                <div class="p-2 w-1/2">
+                  <div class="relative">
+                    <label
+                      for="name"
+                      class="leading-7 text-sm text-gray-600 dark:text-slate-50"
+                      >Name</label
                     >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    />
                   </div>
-                  <div
-                    class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+                </div>
+                <div class="p-2 w-1/2">
+                  <div class="relative">
+                    <label
+                      for="email"
+                      class="leading-7 text-sm text-gray-600 dark:text-slate-50"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    />
+                  </div>
+                </div>
+                <div class="p-2 w-full">
+                  <div class="relative">
+                    <label
+                      for="message"
+                      class="leading-7 text-sm text-gray-600 dark:text-slate-50"
+                      >Message</label
+                    >
+                    <textarea
+                      id="message"
+                      name="message"
+                      class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="p-2 w-full">
+                  <button
+                    class="flex mx-auto text-white dark:bg-cyan-500 bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-blue-800 rounded text-lg"
+                    >Send</button
                   >
-                    <a class="text-blue-500">example@email.com</a>
-                    <p class="leading-normal my-5">
-                      49 Smith St.
-                      <br />Saint Cloud, MN 56301
-                    </p>
-                    <span class="inline-flex">
-                      <a class="text-gray-500">
-                        <svg
-                          fill="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          class="w-5 h-5"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                          ></path>
-                        </svg>
-                      </a>
-                      <a class="ml-4 text-gray-500">
-                        <svg
-                          fill="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          class="w-5 h-5"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                          ></path>
-                        </svg>
-                      </a>
-                      <a class="ml-4 text-gray-500">
-                        <svg
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          class="w-5 h-5"
-                          viewBox="0 0 24 24"
-                        >
-                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"
-                          ></rect>
-                          <path
-                            d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-                          ></path>
-                        </svg>
-                      </a>
-                      <a class="ml-4 text-gray-500">
-                        <svg
-                          fill="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          class="w-5 h-5"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
-                          ></path>
-                        </svg>
-                      </a>
-                    </span>
-                  </div>
+                </div>
+                <div
+                  class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+                >
+                  <a class="text-blue-500 dark:text-cyan-400"
+                    >example@email.com</a
+                  >
+                  <p class="leading-normal my-5 dark:text-slate-50">
+                    49 Smith St.
+                    <br />Saint Cloud, MN 56301
+                  </p>
+                  <span class="inline-flex">
+                    <a class="text-gray-500 dark:text-slate-50">
+                      <svg
+                        fill="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a class="ml-4 text-gray-500 dark:text-slate-50">
+                      <svg
+                        fill="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a class="ml-4 text-gray-500 dark:text-slate-50">
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                      >
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+                        ></rect>
+                        <path
+                          d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a class="ml-4 text-gray-500 dark:text-slate-50">
+                      <svg
+                        fill="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </footer>
-  </body>
+      </div>
+    </section>
+  </footer>
 </html>
