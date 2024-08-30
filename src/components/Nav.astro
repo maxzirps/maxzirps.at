@@ -1,0 +1,45 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<div
+  class="px-5vw py-9 lg:py-12 container mx-auto p-5 flex flex-row items-center"
+>
+  <a class="flex items-center text-gray-900 dark:text-white cursor-pointer">
+    <h1 class="text-primary text-2xl">Maximilian Zirps</h1>
+  </a>
+  <div class="grow flex items-center flex-row-reverse">
+    <button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-12"
+      >
+        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="hidden md:display">
+    <nav
+      class="md:ml-auto flex items-center text-base justify-center dark:text-zinc-50"
+    >
+      <a class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer"
+        >Services</a
+      >
+      <a class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer"
+        >Blog</a
+      >
+      <a class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer"
+        >Contact</a
+      >
+    </nav>
+    <div
+      class="flex items-center border-l border-slate-200 ml-2 pl-4 dark:border-cyan-200"
+    >
+      <ThemeIcon />
+    </div>
+  </div>
+</div>
