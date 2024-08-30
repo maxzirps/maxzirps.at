@@ -7,4 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   // Enable Solid to support Solid JSX components.
   integrations: [solid(), tailwind()],
+  devToolbar: {
+    enabled: false,
+  },
 });

@@ -1,16 +1,4 @@
 ---
-import "@fontsource-variable/exo-2";
-import "@fontsource/palanquin/100.css";
-import "@fontsource/palanquin/200.css";
-import "@fontsource/palanquin/300.css";
-import "@fontsource/palanquin/400.css";
-import "@fontsource/palanquin/500.css";
-import "@fontsource/palanquin/600.css";
-import "@fontsource/palanquin/700.css";
-import "@fontsource/merriweather/300.css";
-import "@fontsource/merriweather/400.css";
-import "@fontsource/merriweather/700.css";
-import "@fontsource/merriweather/900.css";
 import { Image } from "astro:assets";
 import myImage from "../assets/me.png";
 import teamDarkImage from "../assets/team_dark2.svg";
@@ -19,6 +7,7 @@ import teamImage from "../assets/team.svg";
 import websiteImage from "../assets/website.svg";
 import TechIcons from "../components/TechIcons";
 import ThemeIcon from "../components/ThemeIcon.astro";
+import iphoneIsometric from "../assets/iphones.png";
 ---
 
 <html lang="en">
@@ -27,59 +16,43 @@ import ThemeIcon from "../components/ThemeIcon.astro";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <style>
-      body {
-        font-family: "Palanquin", sans-serif;
-      }
-      h1,
-      h2 {
-        font-family: "Exo 2 Variable", sans-serif, system-ui;
-      }
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Merriweather", serif;
-      }
-
-      @keyframes bounceX {
-        0%,
-        100% {
-          transform: translateX(0%);
-          animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-        }
-        50% {
-          transform: translateX(5%);
-          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-        }
-      }
-    </style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
   </head>
   <body class="dark:bg-black dark:text-slate-50">
-    <header>
-      <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center h-[10vh]"
-      >
-        <a
-          class="flex items-center text-gray-900 mb-4 md:mb-0 dark:text-white cursor-pointer"
-        >
-          <span class="text-2xl font-heading2 p-2">MZ</span>
-          <span class="text-xl font-heading p-2">Maximilian Zirps</span>
-        </a>
+    <div
+      class="px-5vw py-9 lg:py-12 container mx-auto p-5 flex flex-row items-center"
+    >
+      <a class="flex items-center text-gray-900 dark:text-white cursor-pointer">
+        <h1 class="text-primary text-2xl">Maximilian Zirps</h1>
+      </a>
+      <div class="grow flex items-center flex-row-reverse">
+        <button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-12"
+          >
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="hidden md:display">
         <nav
-          class="md:ml-auto flex flex-wrap items-center text-base justify-center dark:text-zinc-50"
+          class="md:ml-auto flex items-center text-base justify-center dark:text-zinc-50"
         >
           <a
-            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer underline-offset-8 hover:underline dark:decoration-white"
+            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer"
             >Services</a
           >
           <a
-            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer underline-offset-8 hover:underline dark:decoration-white"
+            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer"
             >Blog</a
           >
           <a
-            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer underline-offset-8 hover:underline dark:decoration-white"
+            class="mr-5 hover:text-gray-900 dark:hover:text-zinc-50 cursor-pointer"
             >Contact</a
           >
         </nav>
@@ -89,16 +62,17 @@ import ThemeIcon from "../components/ThemeIcon.astro";
           <ThemeIcon />
         </div>
       </div>
-    </header>
-    <section
-      class="h-[90vh] flex items-center justify-center lg:text-left bg-[url('/img/iphone2.png')] bg-cover bg-no-repeat
-      bg-[center_left_4rem] lg:bg-none p-6"
+    </div>
+    <header
+      class="md:h-[90vh] flex items-center justify-center lg:text-left bga-[url('/img/iphone2.png')] bg-cover bg-no-repeat
+      bg-[center_left_4rem] lg:bg-none p-6 text-center mx-10vw"
     >
       <div
-        class="m-auto lg:bg-[url('/img/iphone.png')] bg-contain bg-no-repeat bg-right w-[80%] 2xl:w-auto p-2 lg:p-6"
+        class="m-auto lg:bg-[url('/img/iphone.png')] bg-contain bg-no-repeat bg-right md:w-[80%] 2xl:w-auto p-2 lg:p-6"
       >
-        <h1
-          class="text-5xl tracking-wide leading-tight text-gray-800 mb-6 dark:text-white"
+        <Image src={iphoneIsometric} alt="iPhone Mockups" class="py-4" />
+        <h2
+          class="text-5xl tracking-wide leading-tight mb-6 text-gray-800 md:mb-6 dark:text-white mt-6"
         >
           Turning
           <div class="relative inline-block">
@@ -111,9 +85,9 @@ import ThemeIcon from "../components/ThemeIcon.astro";
           </div>
           <br class="xl:hidden" />
           into Reality
-        </h1>
+        </h2>
         <h2
-          class="text-2xl tracking-widest leading-tight text-gray-700 mb-6 dark:text-slate-50"
+          class="text-2xl tracking-widest leading-tight text-gray-700 mb-6 dark:text-slate-50 hidden md:display"
         >
           Lightweight. Fast. Adaptable.
         </h2>
@@ -121,44 +95,30 @@ import ThemeIcon from "../components/ThemeIcon.astro";
         <div class="mt-16 hidden lg:block">
           <a
             href="#contact"
-            class="border-black inline-flex items-center border py-4 px-4 rounded text-lg hover:bg-black hover:text-white transition duration-300 dark:border-slate-100 dark:hover:bg-white dark:hover:text-black"
+            class="border-black inline-flex items-center border py-2 px-4 rounded-sm text-lg hover:bg-black hover:text-white transition duration-300 dark:border-slate-100 dark:hover:bg-white dark:hover:text-black"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1"
-              stroke="currentColor"
-              class="size-8 text-cyan-600 animate-[bounceX_2s_linear_3000ms_infinite]"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-            </svg>
-
-            <span class="mx-2"> Let's Get Started </span>
+            Let's Get Started
           </a>
         </div>
 
-        <div class="mt-16">
+        <div class="mt-16 md:mt-16">
           <a
             href="#contact"
-            class="lg:hidden bottom-0 border border-black py-2 px-4 rounded-sm text-lg font-semibold"
+            class="md:hidden py-6 px-12 rounded-full text-lg font-semibold bg-black text-white"
           >
             Let's Get Started
           </a>
         </div>
       </div>
-    </section>
-    <section class="m-auto w-[80%] 2xl:w-auto p-6">
-      <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-        <h2 class="sm:text-3xl text-2xl mb-2 text-gray-900 dark:text-white">
+    </header>
+    <section class="m-auto md:w-[80%] 2xl:w-auto p-6 text-center mx-10vw mt-40">
+      <div class="lg:w-1/2 mb-6 lg:mb-0">
+        <h2 class="text-3xl md:text-2xl mb-2 text-gray-900 dark:text-white">
           What I do
         </h2>
         <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0 dark:bg-cyan-400"></div>
       </div>
-      <div class="text-gray-600">
+      <div class="text-gray-600 mt-24">
         <div class="container px-5 p-6 lg:py-24 mx-auto">
           <div class="flex flex-wrap -m-4">
             <div class="md:w-1/2 p-4">
@@ -166,7 +126,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                 <Image
                   src={websiteImage}
                   alt="A description of my image."
-                  class="h-40 rounded w-full mb-6 dark:hidden"
+                  class="h-40 rounded w-full mb-6 dark:hidden mt-[-30%]"
                 />
                 <Image
                   src={websiteDarkImage}
@@ -176,7 +136,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                 <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
                   Custom Web Applications
                 </h2>
-                <p class="leading-relaxed text-base">
+                <p class="leading-relaxed text-base text-justify">
                   I specialize in building dynamic, user-friendly web
                   applications tailored to your unique needs. From front-end
                   interfaces to back-end systems, I create scalable, secure, and
@@ -187,12 +147,12 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                 </p>
               </div>
             </div>
-            <div class="md:w-1/2 p-4">
+            <div class="md:w-1/2 p-4 mt-24">
               <div class="bg-gray-100 p-6 rounded-lg h-full">
                 <Image
                   src={teamImage}
                   alt="A description of my image."
-                  class="h-40 rounded w-full mb-6 dark:hidden"
+                  class="h-40 rounded w-full mb-6 dark:hidden mt-[-30%]"
                 />
                 <Image
                   src={teamDarkImage}
@@ -202,8 +162,8 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                 <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
                   Boost Your Team
                 </h2>
-                <p class="leading-relaxed text-base">
-                  Need to enhance your team’s coding productivity and quality? I
+                <p class="leading-relaxed text-base text-justify">
+                  Need to enhance your team's coding productivity and quality? I
                   provide hands-on support to development teams, assisting with
                   writing, optimizing, and debugging code. With expertise in
                   best practices and clean coding, I help your team tackle
@@ -212,7 +172,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                 </p>
               </div>
             </div>
-            <div class="p-4 w-3/5 mx-auto text-center">
+            <div class="p-4 md:w-3/5 mx-auto text-center">
               <div class="p-6 w-full">
                 <p class="text-gray-900 mb-2 dark:text-zinc-100">
                   with business-proven tools
@@ -227,18 +187,18 @@ import ThemeIcon from "../components/ThemeIcon.astro";
       </div>
     </section>
     <section
-      class="lg:h-screen flex items-center justify-center text-center lg:text-left"
+      class="lg:h-screen flex items-center justify-center text-center lg:text-left m-auto md:w-[80%] 2xl:w-auto p-6 text-center mx-10vw mt-40"
     >
-      <div class="m-auto w-[80%] 2xl:w-auto p-6">
+      <div class="m-auto md:w-[80%] 2xl:w-auto p-6">
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h2 class="sm:text-3xl text-2xl mb-2 text-gray-900 dark:text-white">
+          <h2 class="text-3xl md:text-2xl mb-2 text-gray-900 dark:text-white">
             Latest Articles
           </h2>
           <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0 dark:bg-cyan-400">
           </div>
         </div>
         <div class="text-gray-600 body-font overflow-hidden">
-          <div class="container px-5 p-6 lg:py-24 mx-auto">
+          <div class="container py-6 md:px-5 md:p-6 lg:py-24 mx-auto">
             <div class="-my-8 divide-y-2 divide-gray-100">
               <div class="py-8 flex flex-wrap md:flex-nowrap">
                 <div class="md:flex-grow">
@@ -247,7 +207,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                   >
                     10 Essential Tips for Optimizing Web Performance in 2024
                   </h3>
-                  <p class="leading-relaxed dark:text-slate-50">
+                  <p class="leading-relaxed dark:text-slate-50 text-justify">
                     Discover the latest techniques for speeding up your website
                     and improving user experience in 2024. From lazy loading
                     images to leveraging modern JavaScript frameworks, these 10
@@ -277,14 +237,16 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                   <h3
                     class="text-2xl font-medium text-gray-900 title-font mb-2 dark:text-zinc-50"
                   >
-                    10 Essential Tips for Optimizing Web Performance in 2024
+                    5 Game-Changing AI Tools Every Developer Should Know About
+                    in 2024
                   </h3>
-                  <p class="leading-relaxed dark:text-slate-50">
-                    Discover the latest techniques for speeding up your website
-                    and improving user experience in 2024. From lazy loading
-                    images to leveraging modern JavaScript frameworks, these 10
-                    tips will help you enhance your site's performance and keep
-                    your visitors engaged.
+                  <p class="leading-relaxed dark:text-slate-50 text-justify">
+                    Artificial Intelligence is transforming the tech landscape,
+                    and developers are at the forefront of this revolution. In
+                    this article, we explore five AI tools that are set to
+                    redefine software development in 2024. From code
+                    optimization to AI-driven testing, these tools will help you
+                    work smarter, not harder.
                   </p>
                   <a
                     class="text-blue-800 dark:text-cyan-400 inline-flex items-center mt-4"
@@ -309,14 +271,14 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                   <h3
                     class="text-2xl font-medium text-gray-900 title-font mb-2 dark:text-zinc-50"
                   >
-                    10 Essential Tips for Optimizing Web Performance in 2024
+                    The Future of 5G: What to Expect in the Next Decade
                   </h3>
-                  <p class="leading-relaxed dark:text-slate-50">
-                    Discover the latest techniques for speeding up your website
-                    and improving user experience in 2024. From lazy loading
-                    images to leveraging modern JavaScript frameworks, these 10
-                    tips will help you enhance your site's performance and keep
-                    your visitors engaged.
+                  <p class="leading-relaxed dark:text-slate-50 text-justify">
+                    5G is more than just faster internet—it's the backbone of
+                    the future's interconnected world. As 5G networks continue
+                    to roll out globally, what innovations can we expect in the
+                    next decade? This post dives into the potential impact of 5G
+                    on everything from smart cities to autonomous vehicles.
                   </p>
                   <a
                     class="text-blue-800 dark:text-cyan-400 inline-flex items-center mt-4"
@@ -344,24 +306,19 @@ import ThemeIcon from "../components/ThemeIcon.astro";
   </body>
   <footer>
     <section
-      class="h-screen flex items-center justify-center text-center lg:text-left"
+      class="h-screen flex items-center justify-center text-center lg:text-left m-auto md:w-[80%] 2xl:w-auto p-6 text-center mx-10vw mt-40"
     >
-      <div class="m-auto w-[80%] 2xl:w-auto p-6">
+      <div class="m-auto md:w-[80%] 2xl:w-auto p-6">
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <h2 class="sm:text-3xl text-2xl mb-2 text-gray-900 dark:text-white">
+          <h2 class="text-3xl md:text-2xl mb-2 text-gray-900 dark:text-white">
             Contact
           </h2>
           <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0 dark:bg-cyan-400">
           </div>
         </div>
         <div class="text-gray-600 body-font relative">
-          <div class="container px-5 p-6 lg:py-24 mx-auto">
+          <div class="container py-6 md:px-5 md:p-6 lg:py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-12">
-              <h1
-                class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 dark:text-zinc-50"
-              >
-                Contact Us
-              </h1>
               <Image
                 src={myImage}
                 alt="A description of my image."
@@ -370,15 +327,17 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                 hidden
               />
               <p
-                class="lg:w-2/3 mx-auto leading-relaxed text-base dark:text-slate-50"
+                class="lg:w-2/3 mx-auto leading-relaxed text-base dark:text-slate-50 text-justify"
               >
                 Your tech journey starts with a message — reach out to explore
                 solutions, ask questions, or just get the conversation started!
               </p>
             </div>
             <div class="lg:w-1/2 md:w-2/3 mx-auto">
-              <div class="flex flex-wrap -m-2">
-                <div class="p-2 w-1/2">
+              <div
+                class="flex flex-wrap flex-col md:flex-row items-center -m-2"
+              >
+                <div class="p-2 w-full md:w-1/2">
                   <div class="relative">
                     <label
                       for="name"
@@ -393,7 +352,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
                     />
                   </div>
                 </div>
-                <div class="p-2 w-1/2">
+                <div class="p-2 w-full md:w-1/2">
                   <div class="relative">
                     <label
                       for="email"
