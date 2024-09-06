@@ -1,82 +1,55 @@
 ---
 import { Image } from "astro:assets";
-import teamDarkImage from "../assets/team_dark2.svg";
-import websiteDarkImage from "../assets/website_dark2.svg";
 import teamImage from "../assets/team.svg";
 import websiteImage from "../assets/website.svg";
 import TechIcons from "./TechIcons.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
 ---
 
-<section class="m-auto md:w-[80%] 2xl:w-auto p-6 text-center mx-10vw mt-40">
-  <div class="lg:w-1/2 mb-6 lg:mb-0">
-    <h2 class="text-3xl md:text-2xl mb-2 text-gray-900 dark:text-white">
-      What I do
-    </h2>
-    <div class="h-1 w-20 bg-blue-700 m-auto lg:m-0 dark:bg-cyan-400"></div>
-  </div>
-  <div class="text-gray-600 mt-24">
-    <div class="container px-5 p-6 lg:py-24 mx-auto">
-      <div class="flex flex-wrap -m-4">
-        <div class="md:w-1/2 p-4">
-          <div class="bg-gray-100 p-6 rounded-lg h-full">
-            <Image
-              src={websiteImage}
-              alt="A description of my image."
-              class="h-40 rounded w-full mb-6 dark:hidden mt-[-30%]"
-            />
-            <Image
-              src={websiteDarkImage}
-              alt="A description of my image."
-              class="h-40 rounded w-full mb-6 dark:block hidden"
-            />
-            <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
-              Custom Web Applications
-            </h2>
-            <p class="leading-relaxed text-base text-justify">
-              I specialize in building dynamic, user-friendly web applications
-              tailored to your unique needs. From front-end interfaces to
-              back-end systems, I create scalable, secure, and high-performance
-              solutions that drive your business forward. Whether you need a new
-              web app or enhancements to an existing one, I deliver reliable,
-              clean code and a seamless user experience.
-            </p>
-          </div>
-        </div>
-        <div class="md:w-1/2 p-4 mt-24">
-          <div class="bg-gray-100 p-6 rounded-lg h-full">
-            <Image
-              src={teamImage}
-              alt="A description of my image."
-              class="h-40 rounded w-full mb-6 dark:hidden mt-[-30%]"
-            />
-            <Image
-              src={teamDarkImage}
-              alt="A description of my image."
-              class="h-40 rounded w-full mb-6 dark:block hidden"
-            />
-            <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
-              Boost Your Team
-            </h2>
-            <p class="leading-relaxed text-base text-justify">
-              Need to enhance your team's coding productivity and quality? I
-              provide hands-on support to development teams, assisting with
-              writing, optimizing, and debugging code. With expertise in best
-              practices and clean coding, I help your team tackle complex tasks,
-              fix issues faster, and improve overall code quality.
-            </p>
-          </div>
-        </div>
-        <div class="p-4 md:w-3/5 mx-auto text-center">
-          <div class="p-6 w-full">
-            <p class="text-gray-900 mb-2 dark:text-zinc-100">
-              with business-proven tools
-            </p>
-            <div>
-              <TechIcons classes="size-6 inline mr-2" />
-            </div>
-          </div>
-        </div>
+<SectionLayout title="What I do">
+  <div class="flex flex-wrap space-y-12">
+    <div class="flex flex-row justify-center items-center space-x-4">
+      <div class="bg-gray-100 p-6 rounded-lg h-full lg:w-1/2">
+        <Image
+          src={websiteImage}
+          alt="Image of website"
+          class="h-40 rounded w-full mb-6"
+        />
+
+        <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
+          Effortles Frontend Solutions
+        </h2>
+        <p class="leading-relaxed text-base text-justify">
+          I develop custom frontend web applications focused on simplicity and
+          performance. My work ensures that your application is intuitive,
+          responsive, and optimized for all devices. I also provide ongoing
+          support to maintain a seamless user experience.
+        </p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg h-full lg:w-1/2">
+        <Image
+          src={teamImage}
+          alt="Image of a team"
+          class="h-40 rounded w-full mb-6"
+        />
+
+        <h2 class="text-lg text-gray-900 font-medium mb-4 text-center">
+          Boost Your Team
+        </h2>
+        <p class="leading-relaxed text-base text-justify">
+          Need to enhance your team's coding productivity and quality? I provide
+          hands-on support to development teams, assisting with writing,
+          optimizing, and debugging code. With expertise in best practices and
+          clean coding, I help your team tackle complex tasks, fix issues
+          faster, and improve overall code quality.
+        </p>
+      </div>
+    </div>
+    <div class="text-center mx-auto">
+      <p class="text-gray-900 mb-2">Crafted with business-proven tools</p>
+      <div>
+        <TechIcons classes="size-6 inline mr-2" />
       </div>
     </div>
   </div>
-</section>
+</SectionLayout>

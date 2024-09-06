@@ -4,8 +4,7 @@ import "@fontsource-variable/mulish";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import Services from "../components/Services.astro";
-import Articles from "../components/Articles.astro";
-import Footer from "../components/Footer.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <html lang="en">
@@ -26,13 +25,14 @@ import Footer from "../components/Footer.astro";
       }
     </style>
   </head>
-  <body class="dark:bg-black dark:text-slate-50">
+  <body class="xl:mx-[10vw]">
     <div class="h-screen">
       <Nav />
       <Header />
     </div>
     <Services />
-    <Articles />
-    <Footer />
+    <footer>
+      <Contact />
+    </footer>
   </body>
 </html>
