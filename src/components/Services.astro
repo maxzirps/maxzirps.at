@@ -8,7 +8,9 @@ import SectionLayout from "../layouts/SectionLayout.astro";
 
 <SectionLayout title="What I do">
   <div class="flex flex-wrap space-y-12">
-    <div class="flex flex-row justify-center items-center space-x-4">
+    <div
+      class="flex flex-col space-y-12 justify-center items-center xl:space-x-4 xl:flex-row xl:space-y-0"
+    >
       <div class="bg-gray-100 p-6 rounded-lg h-full lg:w-1/2">
         <Image
           src={websiteImage}
