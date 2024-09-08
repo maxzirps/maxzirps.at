@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import programmerImg from "../assets/haze-programmer.png";
+import me from "../assets/me3.png";
+import me4 from "../assets/me4.png";
 ---
 
 <style>
@@ -36,61 +37,97 @@ import programmerImg from "../assets/haze-programmer.png";
   }
 </style>
 
-<header
-  class="md:h-[80vh] flex items-center justify-center text-center xl:text-left"
->
-  <div>
-    <div class="w-[80%] mx-auto xl:w-full">
-      <Image
-        src={programmerImg}
-        alt="Programmer"
-        class="py-4 animate-[fadeIn_0.5s_ease-in-out] xl:hidden"
-      />
-    </div>
-
-    <span
-      class="text-4xl xl:text-5xl tracking-wide leading-tight mb-6 text-gray-800 xl:mb-6 mt-6"
+<header class="grow flex items-center justify-center">
+  <div class="w-1/2 pl-12">
+    <h2
+      class="text-4xl xl:text-5xl tracking-wide leading-tight mb-6 text-gray-800 mt-6"
     >
-      <div class="animate-[fadeInFromBottom_0.5s_ease-in-out]">
-        Lean Solutions powering
-      </div>
-      <div class="relative inline-block">
-        <div
-          class="font-semibold bg-white animate-[fadeInFromBottom_0.5s_ease-in-out] pb-2"
+      Frontend with a smile
+      <svg
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-12 h-12 inline-block text-sky-500 rotate-12"
+        fill="currentColor"
+        stroke="currentColor"
+      >
+        <circle cx="60" cy="80" r="10"></circle>
+        <circle cx="140" cy="80" r="10"></circle>
+        <path
+          d="M 50 140 Q 100 180 150 140"
+          stroke-width="10"
+          fill="transparent"></path>
+      </svg>
+    </h2>
+
+    <ul class="space-y-1">
+      <li class="flex items-center space-x-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-sky-500"
         >
-          Your Digital Success
-        </div>
-        <span
-          class="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-blue-700 to-cyan-300 animate-[expandX_200ms_cubic-bezier(0.42,_0,_0.58,_1)_0.8s_forwards]"
-        ></span>
-      </div>
-    </span>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+        <span>Intuitive interfaces</span>
+      </li>
+      <li class="flex items-center space-x-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-sky-500"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+        <span>High-quality code</span>
+      </li>
+      <li class="flex items-center space-x-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-sky-500"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+        <span>Much coffee</span>
+      </li>
+    </ul>
 
-    <div
-      class="mt-16 hidden xl:block animate-[fadeInFromBottom_0.5s_ease-in-out_1.2s_forwards] opacity-0"
-    >
+    <p class="mt-4 text-2xl tracking-wide">
+      That simple<span class="text-sky-500 text-4xl">.</span>
+    </p>
+
+    <div class="mt-16 relative">
       <a
         href="mailto:hello@maxzirps.at"
-        class="border-black inline-flex items-center border py-4 px-8 rounded-full text-lg hover:bg-black hover:text-white transition duration-300"
+        class="border-black inline-flex items-center border p-4 pr-8 rounded-r-full text-lg hover:bg-black hover:text-white transition duration-300"
       >
-        Let's Get Started
-      </a>
-    </div>
-
-    <div
-      class="mt-16 xl:hidden animate-[fadeInFromBottom_0.5s_ease-in-out_1.2s_forwards] opacity-0"
-    >
-      <a
-        href="mailto:hello@maxzirps.at"
-        class="py-6 px-12 rounded-full text-lg font-semibold bg-black text-white"
-      >
-        Let's Get Started
+        Let's get started
       </a>
     </div>
   </div>
-  <Image
-    src={programmerImg}
-    alt="Programmer"
-    class="py-4 animate-[fadeIn_0.5s_ease-in-out] hidden xl:block"
-  />
+  <div class="w-1/2">
+    <Image
+      src={me4}
+      alt="Picture of Maximilian Zirps"
+      class="rounded-l-full h-[32rem] object-cover object-top"
+    />
+  </div>
 </header>

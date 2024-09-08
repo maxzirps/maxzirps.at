@@ -1,10 +1,9 @@
 ---
-import "@fontsource-variable/raleway";
-import "@fontsource-variable/mulish";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
-import Services from "../components/Services.astro";
 import Footer from "../components/Footer.astro";
+import "@fontsource-variable/nunito";
+import "@fontsource-variable/raleway";
 ---
 
 <html lang="en">
@@ -16,22 +15,17 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <style is:global>
       body {
-        font-family: "Mulish Variable", sans-serif;
+        font-family: "Nunito Variable", sans-serif;
       }
-
-      h1,
       h2 {
         font-family: "Raleway Variable", sans-serif;
       }
     </style>
   </head>
   <body>
-    <div class="xl:mx-[10vw]">
-      <div class="h-screen">
-        <Nav />
-        <Header />
-      </div>
-      <Services />
+    <div class="flex flex-col h-screen">
+      <Nav />
+      <Header />
     </div>
     <Footer />
   </body>

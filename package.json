@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.3",
     "@astrojs/tailwind": "^5.1.0",
-    "@fontsource-variable/mulish": "^5.0.20",
+    "@fontsource-variable/nunito": "^5.0.21",
     "@fontsource-variable/raleway": "^5.0.21",
     "astro": "^4.14.5",
     "motion": "^10.18.0",
