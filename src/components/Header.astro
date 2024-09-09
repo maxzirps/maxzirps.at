@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import me from "../assets/me3.png";
-import me4 from "../assets/me4.png";
+import me5 from "../assets/me5.png";
 ---
 
 <style>
@@ -37,8 +36,8 @@ import me4 from "../assets/me4.png";
   }
 </style>
 
-<header class="grow flex items-center justify-center">
-  <div class="w-1/2 pl-12">
+<header class="grow flex flex-col sm:flex-row sm:justify-center">
+  <div class="sm:w-1/2 sm:pl-12 h-[50vh] px-8">
     <h2
       class="text-4xl xl:text-5xl tracking-wide leading-tight mb-6 text-gray-800 mt-6"
     >
@@ -74,7 +73,7 @@ import me4 from "../assets/me4.png";
             stroke-linejoin="round"
             d="M12 4.5v15m7.5-7.5h-15"></path>
         </svg>
-        <span>Intuitive interfaces</span>
+        <span>Intuitive interface</span>
       </li>
       <li class="flex items-center space-x-2">
         <svg
@@ -114,20 +113,20 @@ import me4 from "../assets/me4.png";
       That simple<span class="text-sky-500 text-4xl">.</span>
     </p>
 
-    <div class="mt-16 relative">
+    <div class="mt-16">
       <a
         href="mailto:hello@maxzirps.at"
-        class="border-black inline-flex items-center border p-4 pr-8 rounded-r-full text-lg hover:bg-black hover:text-white transition duration-300"
+        class="border-black inline-flex items-center border py-4 px-8 sm:p-4 sm:pr-8 rounded-full sm:rounded-r-full text-lg hover:bg-black hover:text-white transition duration-300"
       >
         Let's get started
       </a>
     </div>
   </div>
-  <div class="w-1/2">
+  <div class="w-full h-full mt-16 sm:w-1/2">
     <Image
-      src={me4}
+      src={me5}
       alt="Picture of Maximilian Zirps"
-      class="rounded-l-full h-[32rem] object-cover object-top"
+      class="pt-4 pl-4 bg-gradient-to-b from-cyan-200 to-sky-500 rounded-r-full float-left"
     />
   </div>
 </header>
