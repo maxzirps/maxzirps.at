@@ -1,0 +1,38 @@
+---
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource-variable/nunito";
+import "@fontsource-variable/raleway";
+---
+
+<html lang="en">
+  <head>
+    <title>Maximilian Zirps - Freelance front-end Developer</title>
+    <meta
+      name="description"
+      content="Got an idea for a website or app? I'm here to help you build it, blending front-end development and design to make it shine. Let's talk and make your project happen!"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <style is:global>
+      body {
+        font-family: "Nunito Variable", sans-serif;
+      }
+      h2 {
+        font-family: "Raleway Variable", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex flex-col min-h-screen">
+      <Nav />
+      <Header />
+    </div>
+    <Footer />
+  </body>
+</html>
