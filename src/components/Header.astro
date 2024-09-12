@@ -6,33 +6,30 @@ import TechIcons from "./TechIcons.astro";
 ---
 
 <style>
+  #circle1 {
+    opacity: 0;
+    animation: fadeIn 0.1s ease-out forwards 0.2s;
+  }
+
+  #circle2 {
+    opacity: 0;
+    animation: fadeIn 0.1s ease-out forwards 0.4s;
+  }
+
+  .svg-path {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: draw 0.7s ease-out forwards 0.7s;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
   @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: scale(1.2);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes expandX {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: 100%;
-    }
-  }
-
-  @keyframes fadeInFromBottom {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
+    to {
       opacity: 1;
     }
   }
@@ -54,12 +51,15 @@ import TechIcons from "./TechIcons.astro";
           fill="currentColor"
           stroke="currentColor"
         >
-          <circle cx="60" cy="80" r="10"></circle>
-          <circle cx="140" cy="80" r="10"></circle>
-          <path
-            d="M 50 140 Q 100 180 150 140"
-            stroke-width="10"
-            fill="transparent"></path>
+          <g>
+            <circle cx="60" cy="80" r="10" id="circle1"></circle>
+            <circle cx="140" cy="80" r="10" id="circle2"></circle>
+            <path
+              d="M 50 140 Q 100 180 150 140"
+              stroke-width="10"
+              fill="transparent"
+              class="svg-path"></path>
+          </g>
         </svg>
       </h2>
       <ul
@@ -121,7 +121,7 @@ import TechIcons from "./TechIcons.astro";
       <div class="mt-16">
         <a
           href="mailto:hello@maxzirps.at"
-          class="border-black inline-flex items-center border py-4 px-8 rounded-full sm:rounded-r-full text-lg hover:bg-black hover:text-white transition duration-300"
+          class="inline-flex items-center py-4 px-8 bg-black text-white rounded-full text-lg tracking-wide transition duration-300"
         >
           Let's get started
         </a>
