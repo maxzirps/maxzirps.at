@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import robot from "../assets/network-delivery-robot-1.gif";
+---
+
+<script>
+  import Typed from "typed.js";
+
+  const codeString = `
+import { useState } from 'react';
+
+// TODO: implement awesome project
+`;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const typed = new Typed("#code-block", {
+      strings: [codeString],
+      typeSpeed: 50,
+      startDelay: 1000,
+      backDelay: 3000,
+      showCursor: true,
+      loop: true,
+      loopCount: Infinity,
+    });
+  });
+</script>
+<div
+  class="flex flex-col max-w-5xl px-4 mx-auto justify-between mt-24 p-12 text-center"
+>
+  <h2 class="text-3xl text-center my-4">Portfolio</h2>
+  <div class="relative mx-auto w-72 h-full">
+    <div class="absolute inset-0 w-full h-32 -z-50">
+      <div class="flex justify-center items-center h-full w-full">
+        <div class="flex flex-col w-full h-full bg-black">
+          <div class="flex gap-x-1 p-1 bg-zinc-200">
+            <span class="bg-red-500 w-2 h-2 rounded-full"></span>
+            <span class="bg-yellow-500 w-2 h-2 rounded-full"></span>
+            <span class="bg-green-500 w-2 h-2 rounded-full"></span>
+          </div>
+          <div class="w-full h-full text-left p-2">
+            <pre id="code-block" class="text-xs text-white font-mono"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Image
+      src={robot}
+      alt="Picture of a delivery robot with a flag."
+      class="text-center w-48 h-48 drop-shadow"
+    />
+  </div>
+  <pre>on its way ...</pre>
+</div>

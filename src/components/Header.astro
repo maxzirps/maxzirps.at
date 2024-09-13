@@ -8,18 +8,18 @@ import TechIcons from "./TechIcons.astro";
 <style>
   #circle1 {
     opacity: 0;
-    animation: fadeIn 0.1s ease-out forwards 0.2s;
+    animation: fadeIn 0.1s ease-out forwards 0.5s;
   }
 
   #circle2 {
     opacity: 0;
-    animation: fadeIn 0.1s ease-out forwards 0.4s;
+    animation: fadeIn 0.1s ease-out forwards 0.7s;
   }
 
   .svg-path {
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
-    animation: draw 0.7s ease-out forwards 0.7s;
+    animation: draw 0.7s ease-out forwards 1s;
   }
 
   @keyframes draw {
@@ -35,117 +35,113 @@ import TechIcons from "./TechIcons.astro";
   }
 </style>
 
-<header class="grow flex flex-row justify-center md:p-12">
-  <div
-    class="flex flex-col md:flex-row self-center space-x-4 xl:space-x-12 2xl:space-x-24"
-  >
-    <div class="text-center md:text-left p-12 sm:p-0">
-      <h2
-        class="text-4xl xl:text-5xl font-semibold tracking-wide leading-tight mb-6 text-gray-800"
-      >
-        Front-end with a smile
-        <svg
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-          class="size-12 sm:size-16 inline-block text-sky-500 rotate-12"
-          fill="currentColor"
-          stroke="currentColor"
-        >
-          <g>
-            <circle cx="60" cy="80" r="10" id="circle1"></circle>
-            <circle cx="140" cy="80" r="10" id="circle2"></circle>
-            <path
-              d="M 50 140 Q 100 180 150 140"
-              stroke-width="10"
-              fill="transparent"
-              class="svg-path"></path>
-          </g>
-        </svg>
-      </h2>
-      <ul
-        class="space-y-2 py-4 flex flex-col items-start w-fit mx-auto md:w-full"
-      >
-        <li>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6 text-sky-500 inline"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 4.5v15m7.5-7.5h-15"></path>
-          </svg>
-          <span>No-fuss solutions</span>
-        </li>
-        <li>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6 text-sky-500 inline"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 4.5v15m7.5-7.5h-15"></path>
-          </svg>
-          <span>Charming interfaces</span>
-        </li>
-        <li>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6 text-sky-500 inline"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 4.5v15m7.5-7.5h-15"></path>
-          </svg>
-          <span>High-quality code</span>
-        </li>
-      </ul>
-
-      <p class="mt-8 text-2xl tracking-widest">
-        That simple<span class="text-sky-500 text-4xl">.</span>
-      </p>
-      <div class="mt-16">
-        <a
-          href="mailto:hello@maxzirps.at"
-          class="inline-flex items-center py-4 px-8 bg-black text-white rounded-full text-lg tracking-wide transition duration-300"
-        >
-          Let's get started
-        </a>
-      </div>
-    </div>
-    <div
-      class="mt-16 flex flex-col items-center justify-center md:justify-start md:mt-0"
+<header
+  class="grow flex flex-col sm:flex-row max-w-5xl px-4 mx-auto justify-between md:mt-24 lg:mt-32"
+>
+  <div class="text-center md:text-left p-12 sm:p-0">
+    <h2
+      class="text-4xl lg:text-6xl font-semibold tracking-wide leading-tight mb-6 text-gray-800"
     >
-      <Image
-        src={me5}
-        alt="Picture of Maximilian Zirps"
-        class="pt-4 bg-gradient-to-b from-cyan-200 to-sky-500 rounded-lg w-64 md:hidden"
+      Front-end with a smile
+      <svg
+        viewBox="0 0 200 200"
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-12 sm:size-16 inline-block text-sky-500 rotate-12"
+        fill="currentColor"
+        stroke="currentColor"
+      >
+        <g>
+          <circle cx="60" cy="80" r="10" id="circle1"></circle>
+          <circle cx="140" cy="80" r="10" id="circle2"></circle>
+          <path
+            d="M 50 140 Q 100 180 150 140"
+            stroke-width="10"
+            fill="transparent"
+            class="svg-path"></path>
+        </g>
+      </svg>
+    </h2>
+    <ul
+      class="space-y-2 py-4 flex flex-col items-start w-fit mx-auto md:w-full"
+    >
+      <li>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-sky-500 inline"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+        <span>No-fuss solutions</span>
+      </li>
+      <li>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-sky-500 inline"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+        <span>Charming interfaces</span>
+      </li>
+      <li>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-sky-500 inline"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 4.5v15m7.5-7.5h-15"></path>
+        </svg>
+        <span>High-quality code</span>
+      </li>
+    </ul>
+
+    <p class="mt-8 text-2xl tracking-widest">
+      That simple<span class="text-sky-500 text-4xl">.</span>
+    </p>
+    <div class="mt-16">
+      <a
+        href="mailto:hello@maxzirps.at"
+        class="inline-flex items-center py-4 px-8 bg-black text-white rounded-full text-lg tracking-wide transition duration-300"
+      >
+        Let's get started
+      </a>
+    </div>
+  </div>
+  <div class="mt-16 flex flex-col items-center justify-between md:mt-0">
+    <Image
+      src={me5}
+      alt="Picture of Maximilian Zirps"
+      class="pt-4 bg-gradient-to-b from-cyan-200 to-sky-500 rounded-lg w-64 md:hidden"
+    />
+    <Image
+      src={meUp}
+      alt="Picture of Maximilian Zirps"
+      class="hidden md:block pt-4 bg-gradient-to-b from-cyan-200 to-sky-500 rounded-lg w-64 md:w-auto px-12"
+    />
+    <div class="mx-auto">
+      <TechIcons
+        classes="grid grid-cols-4 gap-2 mt-4 md:grid-cols-8"
+        iconClasses="size-6"
       />
-      <Image
-        src={meUp}
-        alt="Picture of Maximilian Zirps"
-        class="hidden md:block pt-4 bg-gradient-to-b from-cyan-200 to-sky-500 rounded-lg w-64 md:w-auto px-12"
-      />
-      <div class="mx-auto">
-        <TechIcons
-          classes="grid grid-cols-4 gap-2 mt-4 md:grid-cols-8"
-          iconClasses="size-6"
-        />
-      </div>
     </div>
   </div>
 </header>

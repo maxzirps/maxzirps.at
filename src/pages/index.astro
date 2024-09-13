@@ -4,6 +4,7 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import "@fontsource-variable/nunito";
 import "@fontsource-variable/raleway";
+import Portfolio from "../components/Portfolio.astro";
 ---
 
 <html lang="en">
@@ -25,11 +26,22 @@ import "@fontsource-variable/raleway";
       }
     </style>
   </head>
-  <body>
-    <div class="flex flex-col min-h-screen lg:min-h-[90vh] lg:w-fit lg:mx-auto">
-      <Nav />
-      <Header />
+  <body class="antialiased">
+    <div
+      class="hidden sm:block absolute inset-0 bg-[url('/img/bg.svg')] bg-cover bg-no-repeat h-1/2 w-screen opacity-5 -z-50"
+    >
     </div>
-    <Footer />
+    <div
+      class="hidden sm:block absolute bottom-0 inset-x-0 bg-white h-[98%] w-[95%] rounded-lg blur-lg -z-10 m-auto"
+    >
+    </div>
+    <div class="flex flex-col justify-between h-screen">
+      <div class="w-full">
+        <Nav />
+        <Header />
+        <Portfolio />
+      </div>
+      <Footer />
+    </div>
   </body>
 </html>
