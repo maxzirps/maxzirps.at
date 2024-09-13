@@ -35,11 +35,17 @@ import Portfolio from "../components/Portfolio.astro";
       class="hidden sm:block absolute bottom-0 inset-x-0 bg-white h-[98%] w-[95%] rounded-lg blur-lg -z-40 m-auto"
     >
     </div>
-    <div class="flex flex-col justify-between h-screen">
-      <div class="w-full">
-        <Nav />
-        <Header />
-        <Portfolio />
+    <div class="flex flex-col h-screen">
+      <div class="grow w-full flex flex-col">
+        <div>
+          <Nav />
+        </div>
+        <div>
+          <Header />
+        </div>
+        <div class="grow flex items-center">
+          <Portfolio />
+        </div>
       </div>
       <Footer />
     </div>
