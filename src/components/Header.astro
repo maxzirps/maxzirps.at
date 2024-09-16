@@ -1,8 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import me5 from "../assets/me5.png";
-import meUp from "../assets/me4-removebg.png";
-import TechIcons from "./TechIcons.astro";
+import me from "../assets/me.png";
 ---
 
 <style>
@@ -42,24 +40,26 @@ import TechIcons from "./TechIcons.astro";
     <h2
       class="text-4xl lg:text-6xl font-semibold tracking-wide leading-tight mb-6 text-gray-800"
     >
-      Front-end with a smile
-      <svg
-        viewBox="0 0 200 200"
-        xmlns="http://www.w3.org/2000/svg"
-        class="size-12 sm:size-16 inline-block text-orange-500 rotate-12"
-        fill="currentColor"
-        stroke="currentColor"
+      Front-end with a <span class="text-nowrap"
+        >smile
+        <svg
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-12 sm:size-16 inline-block text-sky-600 rotate-12"
+          fill="currentColor"
+          stroke="currentColor"
+        >
+          <g>
+            <circle cx="60" cy="80" r="10" id="circle1"></circle>
+            <circle cx="140" cy="80" r="10" id="circle2"></circle>
+            <path
+              d="M 50 140 Q 100 180 150 140"
+              stroke-width="10"
+              fill="transparent"
+              class="svg-path"></path>
+          </g>
+        </svg></span
       >
-        <g>
-          <circle cx="60" cy="80" r="10" id="circle1"></circle>
-          <circle cx="140" cy="80" r="10" id="circle2"></circle>
-          <path
-            d="M 50 140 Q 100 180 150 140"
-            stroke-width="10"
-            fill="transparent"
-            class="svg-path"></path>
-        </g>
-      </svg>
     </h2>
     <ul
       class="space-y-2 py-4 flex flex-col items-start w-fit mx-auto md:w-full"
@@ -71,7 +71,7 @@ import TechIcons from "./TechIcons.astro";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 text-orange-500 inline"
+          class="w-6 h-6 text-sky-600 inline"
         >
           <path
             stroke-linecap="round"
@@ -87,7 +87,7 @@ import TechIcons from "./TechIcons.astro";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 text-orange-500 inline"
+          class="w-6 h-6 text-sky-600 inline"
         >
           <path
             stroke-linecap="round"
@@ -103,7 +103,7 @@ import TechIcons from "./TechIcons.astro";
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 text-orange-500 inline"
+          class="w-6 h-6 text-sky-600 inline"
         >
           <path
             stroke-linecap="round"
@@ -115,28 +115,27 @@ import TechIcons from "./TechIcons.astro";
     </ul>
 
     <p class="mt-8 text-2xl tracking-widest">
-      That simple<span class="text-orange-500 text-4xl">.</span>
+      That simple<span class="text-sky-600 text-4xl">.</span>
     </p>
     <div class="mt-16">
       <a
         href="mailto:hello@maxzirps.at"
-        class="inline-flex items-center py-4 px-8 bg-black text-white rounded-full text-lg tracking-wide transition duration-300 bg-gradient-to-br from-orange-500 to-red-500 hover:from-red-500 hover:to-orange-500 transform hover:scale-105"
+        class="inline-flex items-center py-4 px-8 bg-black text-white rounded-full text-lg tracking-wide transition duration-300 bg-gradient-to-br from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-500 transform hover:scale-105"
       >
         Let's get started
       </a>
     </div>
   </div>
-  <div class="py-16 md:mt-0">
-    <div class="md:block relative z-30 pt-6 mx-12">
-      <Image
-        src={meUp}
-        alt="Picture of Maximilian Zirps"
-        class="relative z-30 h-full md:max-w-md mx-auto rounded-br-full"
-      />
-      <div
-        class="absolute bottom-0 right-0 z-20 w-full h-full bg-[url('/img/bg2.svg')] bg-cover bg-no-repeat bg-center"
-      >
-      </div>
+  <div class="relative flex items-end border-b-2 border-blue-300 mx-16 lg:mx-0">
+    <Image
+      src={me}
+      alt="Picture of Maximilian Zirps"
+      class="w-full aspect-[315/469]"
+    />
+
+    <div
+      class="bg-[url('/img/bg_me.svg')] bg-contain bg-no-repeat bg-center absolute inset-0 -z-10 lg:scale-105"
+    >
     </div>
   </div>
 </header>
