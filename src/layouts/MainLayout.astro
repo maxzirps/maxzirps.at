@@ -1,0 +1,55 @@
+---
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource-variable/nunito";
+import "@fontsource-variable/raleway";
+import Portfolio from "../components/Portfolio.astro";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Got an idea for a website or app? I'm here to help you build it, blending front-end development and design to make it shine. Let's talk and make your project happen!"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta
+      name="”keywords”"
+      content="react, frontend, frontend developer, freelance, astro, maxzirps"
+    />
+    <style is:global>
+      body {
+        font-family: "Nunito Variable", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div
+      class="hidden sm:block absolute inset-0 bg-[url('/img/bg.svg')] bg-cover bg-no-repeat h-1/2 w-screen opacity-5 -z-50"
+    >
+    </div>
+    <div
+      class="hidden sm:block absolute bottom-0 inset-x-0 bg-white h-[98%] w-[95%] rounded-lg blur-lg -z-40 m-auto"
+    >
+    </div>
+    <div class="flex flex-col h-screen">
+      <div class="grow w-full flex flex-col">
+        <div>
+          <Nav />
+        </div>
+        <main class="max-w-5xl px-4 mx-auto sm:px-12 w-full">
+          <slot />
+        </main>
+      </div>
+      <Footer />
+    </div>
+  </body>
+</html>
