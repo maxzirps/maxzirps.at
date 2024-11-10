@@ -1,16 +1,26 @@
 ---
-import Header from "../components/Header.astro";
-import Portfolio from "../components/Portfolio.astro";
+import About from "../components/About.astro";
+import BlogPreview from "../components/BlogPreview.astro";
+import Contact from "../components/Contact.astro";
+import ProjectsPreview from "../components/ProjectsPreview.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
 ---
 
-<MainLayout title="Maximilian Zirps - Freelance front-end Developer">
-  <div class="lg:my-12">
-    <div>
-      <Header />
-    </div>
-    <div class="flex items-center pt-24">
-      <Portfolio />
-    </div>
-  </div>
+<MainLayout
+  title="Maximilian Zirps - Freelance Software Engineer"
+  mainClasses="space-y-12 my-12"
+>
+  <SectionLayout>
+    <About />
+  </SectionLayout>
+  <SectionLayout title="Latest Blog Posts">
+    <BlogPreview />
+  </SectionLayout>
+  <SectionLayout title="Currently working on">
+    <ProjectsPreview />
+  </SectionLayout>
+  <SectionLayout title="Contact">
+    <Contact />
+  </SectionLayout>
 </MainLayout>

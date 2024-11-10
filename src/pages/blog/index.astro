@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import SectionLayout from "../../layouts/SectionLayout.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) =>
+    new Date(b.data.pubDate).getDate() - new Date(a.data.pubDate).getDate()
+);
+---
+
+<MainLayout title="Blog">
+  <SectionLayout title="Blog">
+    <h2 class="my-8 text-center">
+      Learning by writing and sharing knowledge. I write about Frontend, Backend
+      and Machine Learning stuff.
+    </h2>
+    <BlogCard post={posts[0]} />
+    <ul class="grid md:grid-cols-2 gap-8 mt-8">
+      {
+        posts.slice(1).map((post) => (
+          <li>
+            <BlogCard post={post} />
+          </li>
+        ))
+      }
+    </ul>
+  </SectionLayout>
+</MainLayout>

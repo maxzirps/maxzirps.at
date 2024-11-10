@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import me from "../assets/me.png";
+---
+
+<div
+  class="flex flex-col flex-col-reverse lg:space-y-0 lg:flex-row lg:space-x-4"
+>
+  <Image
+    src={me}
+    alt="Picture of Maximilian Zirps"
+    class="w-full w-96 grayscale hover:grayscale-0 transition-all duration-300"
+  />
+  <div
+    class="bg-black text-zinc-100 justify-center flex flex-col space-y-4 p-8 lg:px-16 prose lg:prose-lg mb-8 lg:mb-0"
+  >
+    <p>Welcome!</p>
+    <p>
+      I'm a software engineer and machine learning enthusiast dedicated to
+      building smart, efficient solutions.
+    </p>
+    <span class="flex items-center space-x-2">
+      <span
+        >clear <span class="underline decoration-cyan-400">mind</span>
+      </span>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1"
+        stroke="currentColor"
+        class="size-5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"></path>
+      </svg>
+
+      <span
+        >clean <span class="underline decoration-lime-400">code</span>
+      </span>
+    </span>
+  </div>
+</div>
