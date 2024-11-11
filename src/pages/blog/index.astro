@@ -10,12 +10,13 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<MainLayout title="Blog">
+<MainLayout title="Blog" mainClasses="w-full">
   <SectionLayout title="Blog">
-    <h2 class="my-8 text-center">
-      Learning by writing and sharing knowledge. I write about Frontend, Backend
-      and Machine Learning stuff.
-    </h2>
+    <p class="my-8 text-center flex items-center space-x-1 justify-center">
+      Writing about <span class="italic px-1"> this </span> and <span
+        class="font-extralight">that</span
+      >.
+    </p>
     <BlogCard post={posts[0]} />
     <ul class="grid md:grid-cols-2 gap-8 mt-8">
       {

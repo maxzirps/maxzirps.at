@@ -1,0 +1,32 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+const { href, title, date, openInNewTab } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative block h-64 text-left"
+  target={openInNewTab ? "_blank" : undefined}
+  rel={openInNewTab ? "noopener noreferrer" : undefined}
+>
+  <span class="absolute inset-0 border-2 border-dashed border-black"></span>
+
+  <div
+    class="relative flex h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2 duration-500"
+  >
+    <div
+      class="p-4 !pt-0 transition-opacity group-hover:relative sm:p-6 lg:p-8"
+    >
+      <slot name="image" />
+
+      <h2 class="mt-4 text-lg">{title}</h2>
+      {
+        date && (
+          <span class="text-zinc-700 font-light block">
+            <FormattedDate date={date} />
+          </span>
+        )
+      }
+    </div>
+  </div>
+</a>

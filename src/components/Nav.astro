@@ -1,13 +1,33 @@
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const mobileNavigation = document.querySelector("[data-mobile-navigation]");
+
+    const toggleMenu = () => {
+      document.body.classList.toggle("overflow-y-hidden");
+      mobileNavigation.classList.toggle("invisible");
+      mobileNavigation.classList.toggle("opacity-0");
+    };
+    const menuButtons = document.querySelectorAll("[data-menu-button]");
+    menuButtons.forEach((menuButton) =>
+      menuButton.addEventListener("click", () => toggleMenu())
+    );
+
+    // Close the mobile navigation if the user clicks outside of it
+    mobileNavigation.addEventListener("click", (e) => {
+      if (e.target === mobileNavigation) {
+        toggleMenu();
+      }
+    });
+  });
+</script>
+
 <div
-  class="flex flex-row py-8 shadow-md sm:shadow-none mx-auto justify-between bg-white sm:bg-transparent w-full mx-auto px-8 lg:px-24"
+  class="flex flex-row py-8 mx-auto justify-between w-full mx-auto px-8 lg:px-24 text-lg"
 >
-  <a
-    class="flex items-center cursor-pointer prose lg:prose-lg font-medium tracking-wide text-zinc-900"
-    href="/"
-  >
+  <a class="flex items-center cursor-pointer text-zinc-900" href="/">
     Maximilian Zirps
   </a>
-  <button class="lg:hidden">
+  <button class="lg:hidden" data-menu-button>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -23,43 +43,67 @@
     </svg>
   </button>
 
+  <!-- Mobile navigation overlay -->
+  <nav
+    class="absolute inset-0 bg-white z-10 flex flex-col items-center justify-center space-y-4 invisible opacity-0 transition-opacity duration-500"
+    data-mobile-navigation
+  >
+    <button data-menu-button>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 absolute top-0 right-0 m-8"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <a class="text-zinc-900" href="/blog" aria-label="Visit my blog">Blog</a>
+    <a
+      class="text-zinc-900"
+      href="/projects"
+      aria-label="Check out my other projects on github.">Projects</a
+    >
+    <a class="text-zinc-900" href="/about" aria-label="Visit my GitHub profile"
+      >About</a
+    >
+  </nav>
+
   <nav class="hidden lg:flex items-center justify-end space-x-4">
     <div class="relative">
-      <a
-        class="prose lg:prose-lg peer text-zinc-900"
-        aria-label="Visit my blog"
-        href="/blog"
+      <a class="peer text-zinc-900" href="/blog" aria-label="Visit my blog"
+        >Blog</a
       >
-        Blog
-      </a>
       <div
-        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-200 border-b-2 border-dashed border-zinc-800 mt-2"
+        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-500 border-b-2 border-dashed border-zinc-800 mt-2"
       >
       </div>
     </div>
     <div class="relative">
       <a
-        class="prose lg:prose-lg peer text-zinc-900"
-        href="https://github.com/maxzirps"
-        aria-label="Check out my other projects on github."
+        class="peer text-zinc-900"
+        href="/projects"
+        aria-label="Check out my other projects on github.">Projects</a
       >
-        Projects
-      </a>
       <div
-        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-200 border-b-2 border-dashed border-zinc-800 mt-2"
+        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-500 border-b-2 border-dashed border-zinc-800 mt-2"
       >
       </div>
     </div>
     <div class="relative">
       <a
-        class="prose lg:prose-lg peer text-zinc-900"
+        class="peer text-zinc-900"
         href="/about"
-        aria-label="Visit my GitHub profile"
+        aria-label="Visit my GitHub profile">About</a
       >
-        About
-      </a>
       <div
-        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-200 border-b-2 border-dashed border-zinc-800 mt-2"
+        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-500 border-b-2 border-dashed border-zinc-800 mt-2"
       >
       </div>
     </div>

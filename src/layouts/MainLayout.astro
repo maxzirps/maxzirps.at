@@ -3,11 +3,14 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import "@fontsource-variable/montserrat";
 const { title, mainClasses } = Astro.props;
+import { fade } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <title>{title}</title>
+    <ViewTransitions />
     <meta
       name="description"
       content="Got an idea for a website or app? I'm here to help you build it, blending front-end development and design to make it shine. Let's talk and make your project happen!"
@@ -20,7 +23,7 @@ const { title, mainClasses } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta
       name="”keywords”"
-      content="react, frontend, frontend developer, freelance, astro, maxzirps"
+      content="react, frontend, frontend developer, javascript, freelance, astro, maxzirps, machine learning, transformers"
     />
     <style is:global>
       body {
@@ -28,7 +31,7 @@ const { title, mainClasses } = Astro.props;
       }
     </style>
   </head>
-  <body>
+  <body transition:animate={fade({ duration: "0.5s" })}>
     <div class="flex flex-col h-screen max-w-5xl mx-auto">
       <Nav />
       <main

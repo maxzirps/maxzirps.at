@@ -3,16 +3,14 @@ import { Image } from "astro:assets";
 import me from "../assets/me.png";
 ---
 
-<div
-  class="flex flex-col flex-col-reverse lg:space-y-0 lg:flex-row lg:space-x-4"
->
+<div class="grid md:grid-cols-2 gap-2">
   <Image
     src={me}
     alt="Picture of Maximilian Zirps"
-    class="w-full w-96 grayscale hover:grayscale-0 transition-all duration-300"
+    class="w-full w-96 grayscale hover:grayscale-0 transition-all duration-500"
   />
   <div
-    class="bg-black text-zinc-100 justify-center flex flex-col space-y-4 p-8 lg:px-16 prose lg:prose-lg mb-8 lg:mb-0"
+    class="bg-black text-zinc-50 justify-center flex flex-col space-y-6 p-8 lg:px-16 mb-8 lg:mb-0 leading-6"
   >
     <p>Welcome!</p>
     <p>
