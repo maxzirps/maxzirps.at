@@ -5,6 +5,7 @@ import "@fontsource-variable/montserrat";
 const { title, mainClasses } = Astro.props;
 import { fade } from "astro:transitions";
 import { ViewTransitions } from "astro:transitions";
+import "aos/dist/aos.css";
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -30,8 +31,17 @@ import { ViewTransitions } from "astro:transitions";
         font-family: "Montserrat Variable", sans-serif;
       }
     </style>
+
+    <script>
+      import AOS from "aos";
+      AOS.init();
+    </script>
   </head>
-  <body transition:animate={fade({ duration: "0.5s" })}>
+  <body
+    transition:animate={fade({ duration: "0.5s" })}
+    data-aos="fade-in"
+    data-aos-duration="500"
+  >
     <div class="flex flex-col h-screen max-w-5xl mx-auto">
       <Nav />
       <main
