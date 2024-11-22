@@ -13,9 +13,8 @@ const posts = (await getCollection("blog")).sort(
 <MainLayout title="Blog" mainClasses="w-full">
   <SectionLayout title="Blog">
     <p class="my-8 text-center flex items-center space-x-1 justify-center">
-      Writing about <span class="italic px-1"> this </span> and <span
-        class="font-extralight">that</span
-      >.
+      Writing about <span class="font-mono mx-1"> Web </span> and
+      <span class="font-mono mx-1">AI</span>.
     </p>
     <BlogCard post={posts[0]} />
     <ul class="grid md:grid-cols-2 gap-8 mt-8">
