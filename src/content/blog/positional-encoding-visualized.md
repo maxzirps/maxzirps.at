@@ -1,7 +1,7 @@
 ---
 title: "Positional Encoding in Transformers visualized"
 pubDate: "9.11.2024"
-heroImage: "/blog-sin-cos.png"
+heroImage: "/blog/positional-encoding-visualized.png"
 ---
 
 # Dummy Text created with ChatGPT
