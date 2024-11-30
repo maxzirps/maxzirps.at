@@ -1,8 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-import BlogCard from "../../components/BlogCard.astro";
 import SectionLayout from "../../layouts/SectionLayout.astro";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) =>
@@ -15,16 +20,20 @@ const posts = (await getCollection("blog")).sort(
     <p class="my-8 text-center flex items-center space-x-1 justify-center">
       Writing about <span class="font-mono mx-1"> Web </span> and
       <span class="font-mono mx-1">AI</span>.
+      <ul class="grid md:grid-cols-2 gap-8 mt-8 list-none">
+        {
+          posts.map((post) => (
+            <li>
+              <Card className="p-6 bg-transparent hover:border-black hover:bg-zinc-50 cursor-pointer duration-300">
+                <CardHeader>
+                  <CardTitle>{post.data.title}</CardTitle>
+                  <CardDescription>{post.data.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </li>
+          ))
+        }
+      </ul>
     </p>
-    <BlogCard post={posts[0]} />
-    <ul class="grid md:grid-cols-2 gap-8 mt-8">
-      {
-        posts.slice(1).map((post) => (
-          <li>
-            <BlogCard post={post} />
-          </li>
-        ))
-      }
-    </ul>
   </SectionLayout>
 </MainLayout>

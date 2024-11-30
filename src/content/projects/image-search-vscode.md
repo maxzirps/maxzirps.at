@@ -1,5 +1,5 @@
 ---
-title: "Air Quality Monitoring with Raspberry Pi Zero"
+title: "Image Search Vscode"
 pubDate: "22.11.2024"
 heroImage: "/blog/air-quality-monitoring-raspberry-pi-zero.jpg"
 description: "Create your own air quality monitoring system with a Raspberry Pi Zero and learn to track harmful pollutants like PM2.5, CO2, and VOCs for a healthier environment."

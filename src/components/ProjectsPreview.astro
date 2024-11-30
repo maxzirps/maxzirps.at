@@ -1,57 +1,45 @@
 ---
-import Card from "./Card.astro";
-import { Image } from "astro:assets";
-import llamaImage from "../assets/llama.png";
-import imageSearchImage from "../assets/image-search-vscode.png";
+import { getCollection } from "astro:content";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
+import { ArrowUpRight, MoveUpRight } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const projects = await getCollection("projects");
 ---
 
 <div class="flex flex-col">
-  <ul class="grid lg:grid-cols-2 gap-8">
-    <li class="group">
-      <Card
-        title="image-search-vscode"
-        href="https://github.com/maxzirps/image-search-vscode"
-        openInNewTab
-      >
-        <a href="" target="_blank" rel="noopener noreferrer"></a>
-        <Image
-          class="w-24 grayscale group-hover:grayscale-0 transiiton duration-500"
-          src={imageSearchImage}
-          alt="Logo of image-search-vscode project."
-          slot="image"
-        />
-      </Card>
-    </li>
-    <li class="group">
-      <Card
-        title="meta-llama-playground"
-        href="https://github.com/maxzirps/meta-llama-playground"
-        openInNewTab
-      >
-        <Image
-          class="w-24 grayscale group-hover:grayscale-0 transiiton duration-500"
-          src={llamaImage}
-          alt="Logo of meta-llama-playground project."
-          slot="image"
-        />
-      </Card>
-    </li>
+  <ul class="list-none grid grid-cols-2 gap-6">
+    {
+      projects.map((project) => (
+        <li>
+          <Card className="h-56">
+            <CardHeader>
+              <CardTitle className="flex">
+                {project.data.title}
+                <ArrowUpRight strokeWidth={1} className="ml-1 text-zinc-500" />
+              </CardTitle>
+              <CardDescription className="text-justify">
+                {project.data.description}
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </li>
+      ))
+    }
   </ul>
-  <div class="mx-auto mt-12">
-    <a
-      aria-label="See other projects"
-      href="/projects"
-      class="text-xl group relative block"
-    >
-      <span class="absolute inset-0 border-2 border-dashed border-black"></span>
-
-      <div
-        class="duration-500 relative h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
-      >
-        <p class="transition-opacity group-hover:relative p-6 text-center">
-          See other Projects
-        </p>
-      </div>
-    </a>
-  </div>
+  <a
+    aria-label="See other projects"
+    href="/projects"
+    class={cn(buttonVariants({ size: "lg" }), "w-fit mt-8 mx-auto")}
+  >
+    See other projects
+  </a>
 </div>

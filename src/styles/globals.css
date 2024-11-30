@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root custom properties */
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  h2 {
+    @apply mt-10 scroll-m-20 pb-2 text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7 mt-6;
+  }
+
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+
+  ul {
+    @apply my-6 ml-6 list-disc;
+  }
+
+  ul > li {
+    @apply mt-2;
+  }
+
+  table {
+    @apply my-6 w-full overflow-y-auto;
+  }
+
+  th {
+    @apply border px-4 py-2 text-left font-bold;
+  }
+
+  td {
+    @apply border px-4 py-2 text-left;
+  }
+
+  a {
+    @apply font-medium text-primary;
+  }
+}

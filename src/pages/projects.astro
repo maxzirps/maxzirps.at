@@ -1,79 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import SectionLayout from "../layouts/SectionLayout.astro";
-import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
 import llamaImage from "../assets/llama.png";
 import imageSearchImage from "../assets/image-search-vscode.png";
 ---
 
 <MainLayout title="Projects" mainClasses="w-full">
-  <SectionLayout title="Projects">
-    <div class="flex flex-col">
-      <ul class="grid lg:grid-cols-2 gap-8">
-        <li class="group">
-          <Card
-            title="image-search-vscode"
-            href="https://github.com/maxzirps/image-search-vscode"
-            openInNewTab
-          >
-            <Image
-              class="w-24 grayscale group-hover:grayscale-0 transiiton duration-500"
-              src={imageSearchImage}
-              alt="Logo of image-search-vscode project."
-              slot="image"
-            />
-          </Card>
-        </li>
-        <li class="group">
-          <Card
-            title="meta-llama-playground"
-            href="https://github.com/maxzirps/meta-llama-playground"
-            openInNewTab
-          >
-            <Image
-              class="w-24 grayscale group-hover:grayscale-0 transiiton duration-500"
-              src={llamaImage}
-              alt="Logo of meta-llama-playground project."
-              slot="image"
-            />
-          </Card>
-        </li>
-        <li class="group">
-          <Card
-            title="react-native-rtkgps"
-            href="https://github.com/maxzirps/react-native-rtkgps"
-            openInNewTab
-          >
-            <Image
-              class="w-24 grayscale group-hover:grayscale-0 transiiton duration-500 hidden"
-              src={llamaImage}
-              alt="Logo of meta-llama-playground project."
-              slot="image"
-            />
-          </Card>
-        </li>
-      </ul>
-      <div class="mx-auto mt-12">
-        <a
-          aria-label="See other projects"
-          href="https://github.com/maxzirps"
-          class="text-xl group relative block"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="absolute inset-0 border-2 border-dashed border-black"
-          ></span>
-
-          <div
-            class="duration-500 relative h-full transform items-end border-2 border-black bg-white transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2"
-          >
-            <p class="transition-opacity group-hover:relative p-6 text-center">
-              See more Projects on GitHub
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </SectionLayout>
+  <SectionLayout title="Projects" />
 </MainLayout>

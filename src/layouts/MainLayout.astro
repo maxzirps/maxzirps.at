@@ -1,14 +1,14 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import "@fontsource-variable/montserrat";
 const { title, mainClasses } = Astro.props;
 import { fade } from "astro:transitions";
 import { ViewTransitions } from "astro:transitions";
 import "aos/dist/aos.css";
+import "@/styles/globals.css";
 ---
 
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <title>{title}</title>
     <ViewTransitions />
@@ -26,11 +26,6 @@ import "aos/dist/aos.css";
       name="”keywords”"
       content="react, frontend, frontend developer, javascript, freelance, astro, maxzirps, machine learning, transformers"
     />
-    <style is:global>
-      body {
-        font-family: "Montserrat Variable", sans-serif;
-      }
-    </style>
 
     <script>
       import AOS from "aos";
@@ -42,14 +37,11 @@ import "aos/dist/aos.css";
     data-aos="fade-in"
     data-aos-duration="500"
   >
-    <div class="flex flex-col h-screen max-w-5xl mx-auto">
+    <div class="flex flex-col max-w-4xl mx-auto">
       <Nav />
-      <main
-        class=`flex flex-col grow mx-auto px-8 lg:px-24 ${mainClasses || ''}`
-      >
+      <main>
         <slot />
       </main>
-      <div class="mt-12"></div>
       <Footer />
     </div>
   </body>
