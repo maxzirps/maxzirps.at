@@ -1,11 +1,93 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import SectionLayout from "../layouts/SectionLayout.astro";
-import Intro from "../components/Intro.astro";
+import { Book, Brain, Dumbbell, Gamepad2, Swords } from "lucide-react";
+import { Image } from "astro:assets";
+import me from "../assets/me.png";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 ---
 
-<MainLayout title="About" mainClasses="w-full">
-  <SectionLayout title="About me">
-    <Intro />
-  </SectionLayout>
+<MainLayout title="About">
+  <div class="flex flex-col space-y-4">
+    <SectionLayout>
+      <h2 slot="title" class="flex items-center justify-center">
+        The <Brain className="inline-block mx-1 text-zinc-700" size={32} /> at work
+      </h2>
+      <p class="my-8 text-justify">
+        Hi, I'm Max, a passionate tech enthusiast with a focus on Web
+        Development and AI. I love exploring how cutting-edge technologies can
+        enhance human experiences, especially when paired with my second
+        passion: psychology. Understanding how people think and interact with
+        technology is key to creating intuitive, impactful digital experiences.
+        <Image
+          src={me}
+          alt="Picture of Maximilian Zirps"
+          class="w-1/3 mx-auto my-8"
+        />
+      </p>
+    </SectionLayout>
+    <SectionLayout>
+      <h2 slot="title" class="flex items-center justify-center">
+        Beyond the code
+      </h2>
+      <ul class="list-none grid md:grid-cols-3 gap-6 mx-0 my-6">
+        <li class="flex">
+          <Card
+            className="cursor-default hover:border-zinc-200 hover:bg-transparent flex-1 flex flex-col justify-between"
+          >
+            <CardHeader>
+              <CardTitle className="text-center">Gaming</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div class="flex justify-center items-center mt-4">
+                <Gamepad2
+                  size={48}
+                  className="text-zinc-700"
+                  strokeWidth={1.5}
+                />
+              </div></CardContent
+            >
+          </Card>
+        </li>
+        <li class="flex">
+          <Card
+            className="cursor-default hover:border-zinc-200 hover:bg-transparent flex-1 flex flex-col justify-between"
+          >
+            <CardHeader>
+              <CardTitle className="text-center">Manga</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div class="flex justify-center items-center mt-4">
+                <Book size={48} className="text-zinc-700" strokeWidth={1.5} />
+              </div></CardContent
+            >
+          </Card>
+        </li>
+        <li class="flex">
+          <Card
+            className="cursor-default hover:border-zinc-200 hover:bg-transparent flex-1 flex flex-col justify-between"
+          >
+            <CardHeader>
+              <CardTitle className="text-center">Sports</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div class="flex justify-center items-center mt-4">
+                <Dumbbell
+                  size={48}
+                  className="text-zinc-700"
+                  strokeWidth={1.5}
+                />
+              </div></CardContent
+            >
+          </Card>
+        </li>
+      </ul>
+    </SectionLayout>
+  </div>
 </MainLayout>

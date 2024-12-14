@@ -9,7 +9,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Ghost Sans", ...fontFamily.sans],
-        mono: ["Ghost Mono", ...fontFamily.sans],
+        mono: ["Ghost Mono", ...fontFamily.mono],
       },
       borderRadius: {
         lg: "var(--radius)",
