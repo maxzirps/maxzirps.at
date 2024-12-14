@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import { ArrowUpRight } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const projects = await getCollection("projects");
+---
+
+<ul class="grid lg:grid-cols-2 gap-6 list-none mx-0 my-6">
+  {
+    projects.map((project) => (
+      <li class="text-left">
+        <a href={project.data.url} target="_blank" rel="noopener noreferrer">
+          <Card className="h-full w-full">
+            <CardHeader>
+              <CardTitle className="flex space-x-1">
+                {project.data.title}
+                <ArrowUpRight
+                  strokeWidth={1}
+                  className="text-zinc-500 inline-block"
+                />
+              </CardTitle>
+              <CardDescription>{project.data.description}</CardDescription>
+            </CardHeader>
+          </Card>
+        </a>
+      </li>
+    ))
+  }
+</ul>

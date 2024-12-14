@@ -7,7 +7,7 @@ const { title, pubDate, heroImage } = Astro.props;
 
 <MainLayout title={title}>
   <SectionLayout>
-    <article class="prose lg:prose-lg prose-zinc dark:prose-invert max-w-none">
+    <article class="prose prose-zinc dark:prose-invert max-w-none">
       <div class="hero-image">
         {heroImage && <img src={heroImage} alt="" class="w-full" />}
       </div>

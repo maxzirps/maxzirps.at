@@ -2,21 +2,22 @@
 import Intro from "../components/Intro.astro";
 import PostsList from "../components/PostsList.astro";
 import Contact from "../components/Contact.astro";
-import ProjectsList from "../components/ProjectsList.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import ProjectsPreview from "@/components/ProjectsPreview.astro";
 ---
 
 <MainLayout title="Maximilian Zirps - Freelance Software Engineer">
-  <div class="flex flex-col space-y-32 my-24">
+  <div class="flex flex-col space-y-24">
     <SectionLayout>
       <Intro />
     </SectionLayout>
     <SectionLayout>
       <h2 slot="title" class="text-center">Latest writings</h2>
-      <PostsList nrOfPosts={3} />
+      <p class="text-center italic font-mono">Coming soon - stay tuned</p>
+      <!-- <PostsList nrOfPosts={3} />
       <div class="flex items-center justify-center">
         <a
           aria-label="Read more posts in my blog"
@@ -25,11 +26,11 @@ import { cn } from "@/lib/utils";
         >
           Read more
         </a>
-      </div>
+      </div> -->
     </SectionLayout>
     <SectionLayout>
       <h2 slot="title" class="text-center">Currently working on</h2>
-      <ProjectsList spotlight />
+      <ProjectsPreview />
       <div class="flex items-center justify-center">
         <a
           aria-label="See other projects"

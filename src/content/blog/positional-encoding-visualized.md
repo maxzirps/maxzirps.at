@@ -5,8 +5,6 @@ heroImage: "/blog/positional-encoding-visualized.png"
 description: "Some fancy description about positional encoding"
 ---
 
-# Dummy Text created with ChatGPT
-
 # Positional Encoding in Transformers – An Illustrated Guide
 
 When Transformers came on the scene, they transformed (pun intended) the field of natural language processing (NLP) and, later, computer vision and other domains. Unlike previous models, Transformers don’t have an inherent sequential structure, which allows them to process data more efficiently by looking at entire sequences in parallel. But if there's no built-in sequential ordering, how does a Transformer know which word comes first or last in a sentence? The answer lies in **positional encoding**.

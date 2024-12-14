@@ -1,6 +1,6 @@
 ---
-title: "Image Search Vscode"
-description: "Create your own air quality monitoring system with a Raspberry Pi Zero and learn to track harmful pollutants like PM2.5, CO2, and VOCs for a healthier environment."
+title: "Image Search VSCode"
+description: "VSCode Plugin for displaying and downloading images from Pixabay"
 url: "https://github.com/maxzirps/image-search-vscode"
 spotlight: true
 ---
