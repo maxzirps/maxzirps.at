@@ -1,0 +1,24 @@
+---
+import FormattedDate from "../components/FormattedDate.astro";
+import MainLayout from "./MainLayout.astro";
+import SectionLayout from "./SectionLayout.astro";
+const { title, pubDate, heroImage } = Astro.props;
+---
+
+<MainLayout title={title}>
+  <SectionLayout>
+    <article class="prose prose-zinc dark:prose-invert max-w-none">
+      <div class="hero-image">
+        {heroImage && <img src={heroImage} alt="" class="w-full" />}
+      </div>
+      <div>
+        <div class="text-zinc-700 text-lg">
+          <FormattedDate date={pubDate} />
+        </div>
+        <div>
+          <slot />
+        </div>
+      </div>
+    </article>
+  </SectionLayout>
+</MainLayout>

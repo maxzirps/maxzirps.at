@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import { ArrowUpRight } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+let projects = (await getCollection("projects")).filter(
+  (project) => project.data.spotlight === true
+);
+---
+
+<ul
+  class="flex flex-col lg:flex-row list-none space-y-6 lg:space-y-0 lg:space-x-6 mx-0 my-6"
+>
+  {
+    projects.map((project) => (
+      <li class="lg:w-1/2 grow lg:mt-0">
+        <a href={project.data.url} target="_blank" rel="noopener noreferrer">
+          <Card className="h-full w-full">
+            <CardHeader>
+              <CardTitle className="flex">
+                {project.data.title}
+                <ArrowUpRight strokeWidth={1} className="ml-1 text-zinc-500" />
+              </CardTitle>
+              <CardDescription>{project.data.description}</CardDescription>
+            </CardHeader>
+          </Card>
+        </a>
+      </li>
+    ))
+  }
+</ul>

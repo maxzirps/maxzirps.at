@@ -1,16 +1,48 @@
 ---
-import Header from "../components/Header.astro";
-import Portfolio from "../components/Portfolio.astro";
+import Intro from "../components/Intro.astro";
+import PostsList from "../components/PostsList.astro";
+import Contact from "../components/Contact.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import ProjectsPreview from "@/components/ProjectsPreview.astro";
 ---
 
-<MainLayout title="Maximilian Zirps - Freelance front-end Developer">
-  <div class="lg:my-12">
-    <div>
-      <Header />
-    </div>
-    <div class="flex items-center pt-24">
-      <Portfolio />
-    </div>
+<MainLayout title="Maximilian Zirps - Freelance Software Engineer">
+  <div class="flex flex-col space-y-24">
+    <SectionLayout>
+      <Intro />
+    </SectionLayout>
+    <SectionLayout>
+      <h2 slot="title" class="text-center">Latest writings</h2>
+      <p class="text-center italic font-mono">Coming soon - stay tuned</p>
+      <!-- <PostsList nrOfPosts={3} />
+      <div class="flex items-center justify-center">
+        <a
+          aria-label="Read more posts in my blog"
+          href="/blog"
+          class={cn(buttonVariants({ size: "lg" }), "w-fit mt-8 mx-auto")}
+        >
+          Read more
+        </a>
+      </div> -->
+    </SectionLayout>
+    <SectionLayout>
+      <h2 slot="title" class="text-center">Currently working on</h2>
+      <ProjectsPreview />
+      <div class="flex items-center justify-center">
+        <a
+          aria-label="See other projects"
+          href="/projects"
+          class={cn(buttonVariants({ size: "lg" }), "w-fit mt-8 mx-auto")}
+        >
+          See other projects
+        </a>
+      </div>
+    </SectionLayout>
+    <SectionLayout>
+      <Contact />
+    </SectionLayout>
   </div>
 </MainLayout>

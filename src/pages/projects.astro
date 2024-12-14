@@ -1,0 +1,40 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
+import { ArrowUpRight, Minus } from "lucide-react";
+import ProjectsGrid from "@/components/ProjectsGrid.astro";
+---
+
+<MainLayout title="Projects" mainClasses="w-full">
+  <SectionLayout>
+    <h2 slot="title" class="text-center mt-0">Projects</h2>
+    <div
+      class="my-8 text-center flex flex-col items-center space-x-1 justify-center"
+    >
+      <blockquote class="italic text-center border-0 p-0 m-0 block">
+        <p class="mb-4 mt-0">"Time's up, let's do this"</p>
+        <footer class="text-sm text-zinc-500">- Leeroy Jenkins</footer>
+      </blockquote>
+      <ProjectsGrid />
+    </div>
+    <div class="flex items-center justify-center">
+      <a
+        aria-label="Visit my github profile."
+        href="https://github.com/maxzirps"
+        target="_blank"
+        rel="noopener noreferrer"
+        class={cn(
+          buttonVariants({ size: "lg" }),
+          "break-words whitespace-normal text-center py-8 md:py-2"
+        )}
+      >
+        Check out all projects on Github <ArrowUpRight
+          strokeWidth={1}
+          className="ml-1"
+        />
+      </a>
+    </div>
+  </SectionLayout>
+</MainLayout>

@@ -1,29 +1,35 @@
 ---
-
+import { Separator } from "@/components/ui/separator";
 ---
 
 <footer>
+  <Separator />
   <div
-    class="border-t border-gray-300 text-center max-w-5xl mx-auto py-8 text-gray-500 text-sm mt-16 sm:flex justify-between sm:px-12"
+    class="text-center py-4 mb-2 text-sm sm:flex justify-between px-8 lg:px-0 space-y-4 md:space-y-0"
   >
-    <div class="md:text-left">
-      <p>
+    <div class="text-left flex flex-col">
+      <span>
         <a
           aria-label="Read about my privacy policy"
-          class="cursor-pointer hover:text-sky-600 transition duration-300"
-          href="/datenschutz"
+          class="cursor-pointer text-gray-600 hover:text-zinc-900 transition duration-500"
+          href="/privacy-policy"
         >
           Privacy policy
         </a>
-      </p>
-      <p>© Maximilian Zirps 2024</p>
+      </span>
+      <span
+        >Built with <a
+          href="https://astro.build/"
+          class="text-gray-600 hover:text-zinc-900">Astro</a
+        >
+      </span>
+      <span>© Maximilian Zirps 2024</span>
     </div>
-    <p class="sm:text-right mt-2 sm:mt-0">
-      Maximilian Zirps e.U.
-      <br />
-      Seitenstettengasse 5/37 A-1010 Vienna
-      <br />
-      FN 634463i
-    </p>
+    <Separator className="md:hidden" />
+    <div class="text-right flex flex-col">
+      <span>Maximilian Zirps e.U.</span>
+      <span> Seitenstettengasse 5/37 A-1010 Vienna</span>
+      <span>FN 634463i</span>
+    </div>
   </div>
 </footer>
