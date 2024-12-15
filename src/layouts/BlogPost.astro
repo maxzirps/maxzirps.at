@@ -2,19 +2,44 @@
 import FormattedDate from "../components/FormattedDate.astro";
 import MainLayout from "./MainLayout.astro";
 import SectionLayout from "./SectionLayout.astro";
-const { title, pubDate, heroImage } = Astro.props;
+import "katex/dist/katex.min.css";
+const { title, pubDate, heroImage, heroImageDescription } = Astro.props;
 ---
+
+<style>
+  .katex {
+    font-size: 20rem;
+  }
+</style>
 
 <MainLayout title={title}>
   <SectionLayout>
     <article class="prose prose-zinc dark:prose-invert max-w-none">
-      <div class="hero-image">
-        {heroImage && <img src={heroImage} alt="" class="w-full" />}
-      </div>
-      <div>
+      <div class="text-center">
         <div class="text-zinc-700 text-lg">
           <FormattedDate date={pubDate} />
         </div>
+        <h1>{title}</h1>
+      </div>
+      <div class="my-12">
+        {
+          heroImage && (
+            <img
+              src={heroImage}
+              alt="Banner for this blog post."
+              class="w-full border-2 border-zinc-600 mb-2"
+            />
+          )
+        }
+        {
+          heroImageDescription && (
+            <div class="text-center text-xs text-zinc-400">
+              {heroImageDescription}
+            </div>
+          )
+        }
+      </div>
+      <div>
         <div>
           <slot />
         </div>
