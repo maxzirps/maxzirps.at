@@ -1,0 +1,38 @@
+---
+import SectionLayout from "@/layouts/SectionLayout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Image } from "astro:assets";
+import img from "../assets/404.webp";
+---
+
+<MainLayout title="404">
+  <SectionLayout class="flex flex-col grow">
+    <div class="flex flex-col justify-center items-center grow h-full">
+      <h2 class="text-center mt-0 font-mono">Page not found</h2>
+
+      <div class="text-center">
+        <p>Seems like you got lost ...</p>
+        <div class="relative w-full md:w-2/3 mx-auto overflow-hidden mb-12">
+          <Image
+            src={img}
+            alt="Picture of roboto looking at a map."
+            class="w-full h-auto object-cover"
+          />
+          <div
+            class="absolute bottom-0 left-0 w-full h-1/5 bg-gradient-to-t from-white via-white/30 via-95% to-transparent pointer-events-none"
+          >
+          </div>
+        </div>
+        <a
+          aria-label="Return to Homepage"
+          href="/"
+          class={cn(buttonVariants({ size: "lg" }), "w-fit mt-8 mx-auto")}
+        >
+          Return to Home
+        </a>
+      </div>
+    </div>
+  </SectionLayout>
+</MainLayout>
