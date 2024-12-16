@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import SectionLayout from "../layouts/SectionLayout.astro";
-import { Book, Brain, Dumbbell, Gamepad2, Swords } from "lucide-react";
+import { Book, Brain, Dumbbell, Gamepad2, Smile, Swords } from "lucide-react";
 import { Image } from "astro:assets";
 import me from "../assets/me.png";
 import {
@@ -19,18 +19,34 @@ import {
       <h2 slot="title" class="flex items-center justify-center mt-0">
         The <Brain className="inline-block mx-1 text-zinc-700" size={32} /> at work
       </h2>
-      <p class="my-8 text-justify">
-        Hi, I'm Max, a passionate tech enthusiast with a focus on Web
-        Development and AI. I love exploring how cutting-edge technologies can
-        enhance human experiences, especially when paired with my second
-        passion: psychology. Understanding how people think and interact with
-        technology is key to creating intuitive, impactful digital experiences.
+      <div class="my-8 text-center">
+        <p>
+          Hi, I'm Max — a tech voyager specializing in <span class="font-mono"
+            >Web Development</span
+          > and <span class="font-mono">AI</span>.
+        </p>
+        <p>
+          I'm passionate about building solutions that solve real problems and
+          don't end up gathering dust. They should either solve something, make
+          fun, or give you an <span class="font-mono">XP</span> boost.
+        </p>
+        <p>The simpler the better - no need to over-engineer.</p>
+        <p>
+          You might have noticed the robots lingering everywhere around
+          here—those are Gundams, robot-like suits from a Japanese Manga. They
+          combine my passion for Japanese culture and AI, especially the
+          transformer architecture. Hope you like them too <Smile
+            className="inline-block align-text-top size-5"
+            strokeWidth={1.5}
+          />
+        </p>
+        <p class="italic">Cheers.</p>
         <Image
           src={me}
           alt="Picture of Maximilian Zirps"
           class="w-4/6 lg:w-1/3 mx-auto my-8"
         />
-      </p>
+      </div>
     </SectionLayout>
     <SectionLayout>
       <h2 slot="title" class="flex items-center justify-center">
