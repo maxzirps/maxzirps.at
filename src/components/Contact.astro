@@ -5,14 +5,17 @@ import { Linkedin, Mail, Github } from "lucide-react";
 ---
 
 <div
-  class="flex flex-col lg: flex-row lg:space-x-4 items-center justify-center"
+  class="flex flex-col lg:flex-row lg:space-x-12 lg:items-center lg:justify-start w-fit mx-auto"
 >
   <a
     aria-label="Visit my github profile."
     href="https://github.com/maxzirps"
     target="_blank"
     rel="noopener noreferrer"
-    class={cn(buttonVariants({ variant: "link" }), "p-0")}
+    class={cn(
+      buttonVariants({ variant: "link" }),
+      "p-0 justify-start lg:justify-center"
+    )}
   >
     <Github /> maxzirps
   </a>
@@ -21,14 +24,20 @@ import { Linkedin, Mail, Github } from "lucide-react";
     href="https://www.linkedin.com/in/maximilian-zirps/"
     target="_blank"
     rel="noopener noreferrer"
-    class={cn(buttonVariants({ variant: "link" }), "p-0")}
+    class={cn(
+      buttonVariants({ variant: "link" }),
+      "p-0 justify-start lg:justify-center"
+    )}
   >
     <Linkedin /> maximilian-zirps
   </a>
   <a
     aria-label="Send me an email."
     href="mailto:hello@maxzirps.at"
-    class={cn(buttonVariants({ variant: "link" }), "p-0")}
+    class={cn(
+      buttonVariants({ variant: "link" }),
+      "p-0 justify-start lg:justify-center"
+    )}
   >
     <Mail /> hello@maxzirps.at
   </a>
