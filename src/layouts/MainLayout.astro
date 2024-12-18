@@ -3,14 +3,14 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 import { fade } from "astro:transitions";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "@/styles/globals.css";
 ---
 
 <html lang="en">
   <head>
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
     <meta
       name="description"
       content="Got an idea for a website or app? I'm here to help you build it, blending front-end development and design to make it shine. Let's talk and make your project happen!"
@@ -29,7 +29,7 @@ import "@/styles/globals.css";
   <body transition:animate={fade({ duration: "0.5s" })}>
     <div class="flex flex-col max-w-screen lg:max-w-4xl mx-auto min-h-screen">
       <Nav />
-      <main class="grow flex flex-col px-8 lg:px-0 my-8 mb-32">
+      <main class="grow flex flex-col px-8 lg:px-0 my-8 mb-24">
         <slot />
       </main>
       <Footer />

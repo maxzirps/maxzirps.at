@@ -1,0 +1,22 @@
+[
+  {
+    "id": "Attachment Lyrics Matcher",
+    "title": "Attachment Lyrics Matcher",
+    "description": "Find out your attachment style based on your favorite songs",
+    "url": "https://maxzirps.github.io/attachment-lyrics-matcher/",
+    "spotlight": true
+  },
+  {
+    "title": "Image Search VSCode",
+    "id": "Image Search VSCode",
+    "description": "VSCode Plugin for displaying and downloading images from Pixabay",
+    "url": "https://github.com/maxzirps/image-search-vscode",
+    "spotlight": true
+  },
+  {
+    "id": "Website - Wir Raabser",
+    "title": "Website - Wir Raabser",
+    "description": "Created a website for Wir Raabser association to inform citizens and visitors about products and events.",
+    "url": "https://www.wir-raabser.at/"
+  }
+]

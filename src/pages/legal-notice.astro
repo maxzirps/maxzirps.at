@@ -1,0 +1,46 @@
+---
+import SectionLayout from "@/layouts/SectionLayout.astro";
+import { Brain, Smile } from "lucide-react";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Legal Notice">
+  <SectionLayout>
+    <h2 slot="title" class="flex items-center justify-center mt-0">
+      Legal Notice
+    </h2>
+    <div class="my-8 text-center">
+      <div class="flex flex-col space-y-1">
+        <span>Maximilian Zirps e.U.</span>
+        <span>Seitenstettengasse 5/37</span>
+        <span>A-1010 Vienna</span>
+        <span>FN 634463i</span>
+      </div>
+      <h3>Disclaimer for External Links</h3>
+      <p>
+        We are not responsible for the content of external websites. The
+        inclusion of any links does not necessarily imply a recommendation or
+        endorse the views expressed within them.
+      </p>
+      <h3>Liability Disclaimer</h3>
+      <p>
+        The information provided on this website is for general informational
+        purposes only. While we strive to keep the information up-to-date and
+        accurate, we make no warranties of any kind about the completeness,
+        accuracy, or reliability of the information. Any reliance you place on
+        such information is strictly at your own risk.
+      </p>
+      <h3>Copyright Information</h3>
+      <p>
+        Some of the content on this website is protected by copyright law.
+        Please check the copyright status of specific materials before copying,
+        distributing, or using any content.
+      </p>
+      <p>
+        <a href="https://deepai.org/machine-learning-model/text2img"
+          >DeepAI Image Generator</a
+        > has been used for generating image ressources.
+      </p>
+    </div>
+  </SectionLayout>
+</MainLayout>
