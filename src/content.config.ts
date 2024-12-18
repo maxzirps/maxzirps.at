@@ -1,5 +1,5 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
+import { glob, file } from "astro/loaders";
 
 const customDateFormat = z
   .string()
@@ -30,4 +30,15 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const projects = defineCollection({
+  loader: file("./src/content/projects/projects.json"),
+  schema: z.object({
+    id: z.string(),
+    title: z.string(),
+    description: z.string(),
+    url: z.string(),
+    spotlight: z.boolean().optional(),
+  }),
+});
+
+export const collections = { blog, projects };

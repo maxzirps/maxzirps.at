@@ -4,8 +4,8 @@
 
     const toggleMenu = () => {
       document.body.classList.toggle("overflow-y-hidden");
-      mobileNavigation.classList.toggle("invisible");
-      mobileNavigation.classList.toggle("opacity-0");
+      mobileNavigation?.classList.toggle("invisible");
+      mobileNavigation?.classList.toggle("opacity-0");
     };
     const menuButtons = document.querySelectorAll("[data-menu-button]");
     menuButtons.forEach((menuButton) =>
@@ -13,7 +13,7 @@
     );
 
     // Close the mobile navigation if the user clicks outside of it
-    mobileNavigation.addEventListener("click", (e) => {
+    mobileNavigation?.addEventListener("click", (e) => {
       if (e.target === mobileNavigation) {
         toggleMenu();
       }
