@@ -1,15 +1,5 @@
 ---
-const parseDate = (dateString) => {
-  let [d, m, y] = dateString.split(".");
-  const newDate = new Date(y, m - 1, d);
-  if (isNaN(newDate.getTime())) {
-    throw new Error("Invalid dateString: " + dateString);
-  }
-  return newDate;
-};
-
-// Date is a String like 20.10.2009
-const date = parseDate(Astro.props.date);
+const { date } = Astro.props;
 ---
 
 <time datetime={date.toISOString()}>
