@@ -2,7 +2,6 @@
 title: "Positional Encoding in Transformers"
 pubDate: "15.12.2024"
 heroImage: "/blog/robot-chicken-egg.webp"
-heroImageDescription: "Created with https://deepai.org/machine-learning-model/manga-panel-genarator"
 description: "A quick mini-guide about positional encoding in transformers"
 ---
 

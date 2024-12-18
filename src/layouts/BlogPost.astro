@@ -1,14 +1,23 @@
 ---
+import { Pencil } from "lucide-react";
 import FormattedDate from "../components/FormattedDate.astro";
 import MainLayout from "./MainLayout.astro";
 import SectionLayout from "./SectionLayout.astro";
 import "katex/dist/katex.min.css";
-const { title, pubDate, heroImage, heroImageDescription } = Astro.props;
+import { Button } from "@/components/ui/button";
+const { title, pubDate, heroImage, heroImageDescription, slug } = Astro.props;
 ---
 
-<style>
+<style is:global>
   .katex {
-    font-size: 20rem;
+    font-size: 1.2rem;
+  }
+  .remark-code-title {
+    @apply font-mono text-zinc-700;
+  }
+
+  .astro-code {
+    @apply mt-1;
   }
 </style>
 
@@ -27,7 +36,7 @@ const { title, pubDate, heroImage, heroImageDescription } = Astro.props;
             <img
               src={heroImage}
               alt="Banner for this blog post."
-              class="w-full border-2 border-zinc-600 mb-2"
+              class="w-full border-2 border-zinc-400 mb-2"
             />
           )
         }
@@ -40,10 +49,18 @@ const { title, pubDate, heroImage, heroImageDescription } = Astro.props;
         }
       </div>
       <div>
-        <div>
-          <slot />
-        </div>
+        <slot />
       </div>
+      <p class="flex justify-end pt-12">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={`https://github.com/maxzirps/maxzirps.at/edit/main/src/content/blog/${slug}.md`}
+          aria-label="Edit this page on github"
+        >
+          <Button variant="link"> <Pencil />Edit page</Button></a
+        >
+      </p>
     </article>
   </SectionLayout>
 </MainLayout>
