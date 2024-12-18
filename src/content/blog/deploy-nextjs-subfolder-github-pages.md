@@ -48,11 +48,7 @@ To deploy your Next.js frontend using GitHub Actions, the key is setting the cor
 
 Other configurations here account for using <span class="font-mono">pnpm</span>.
 
-:::caution
-
 If you use npm or yarn instead, refer to the [default GitHub Action YAML](https://github.com/actions/starter-workflows/blob/main/pages/nextjs.yml) for their configurations.
-
-:::
 
 ```yaml
 # .github/workflows/nextjs.yaml

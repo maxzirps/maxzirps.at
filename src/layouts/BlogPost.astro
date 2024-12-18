@@ -23,7 +23,9 @@ const { title, pubDate, heroImage, heroImageDescription, slug } = Astro.props;
 
 <MainLayout title={title}>
   <SectionLayout>
-    <article class="prose prose-zinc dark:prose-invert max-w-none">
+    <article
+      class="prose prose-zinc dark:prose-invert max-w-none prose-code:before:hidden prose-code:after:hidden"
+    >
       <div class="text-center">
         <div class="text-zinc-700 text-lg">
           <FormattedDate date={pubDate} />
