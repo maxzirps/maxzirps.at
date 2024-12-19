@@ -1,3 +1,7 @@
+---
+import { Button } from "./ui/button";
+---
+
 <script>
   document.addEventListener("astro:page-load", () => {
     const mobileNavigation = document.querySelector("[data-mobile-navigation]");
@@ -22,9 +26,9 @@
 </script>
 
 <div
-  class="flex flex-row py-8 mx-auto justify-between w-full mx-auto text-lg px-8 lg:px-0"
+  class="flex flex-row py-8 mx-auto justify-between w-full mx-auto px-8 lg:px-0"
 >
-  <a class="flex items-center cursor-pointer text-zinc-900" href="/">
+  <a class="flex items-center cursor-pointer text-zinc-950 text-base" href="/">
     Maximilian Zirps
   </a>
   <button class="lg:hidden" data-menu-button aria-label="Open Menu">
@@ -42,6 +46,28 @@
         d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </svg>
   </button>
+
+  <!-- Desktop navigation -->
+  <nav class="hidden lg:flex items-center justify-end space-x-4">
+    <a href="/blog" aria-label="Visit my blog">
+      <Button variant="link" className="text-base p-0 font-normal">Blog</Button
+      ></a
+    >
+
+    <a
+      class="text-zinc-950"
+      href="/projects"
+      aria-label="Check out my other projects on github."
+    >
+      <Button variant="link" className="text-base p-0 font-normal"
+        >Projects</Button
+      ></a
+    >
+    <a class="text-zinc-950" href="/about" aria-label="Visit my GitHub profile">
+      <Button variant="link" className="text-base p-0 font-normal">About</Button
+      ></a
+    >
+  </nav>
 
   <!-- Mobile navigation overlay -->
   <nav
@@ -64,48 +90,19 @@
       </svg>
     </button>
 
-    <a class="text-zinc-900" href="/blog" aria-label="Visit my blog">Blog</a>
+    <a class="text-zinc-950" href="/blog" aria-label="Visit my blog">
+      <Button variant="link" className="text-base font-normal">Blog</Button></a
+    >
     <a
-      class="text-zinc-900"
+      class="text-zinc-950"
       href="/projects"
-      aria-label="Check out my other projects on github.">Projects</a
+      aria-label="Check out my other projects on github."
     >
-    <a class="text-zinc-900" href="/about" aria-label="Visit my GitHub profile"
-      >About</a
+      <Button variant="link" className="text-base font-normal">Projects</Button
+      ></a
     >
-  </nav>
-
-  <nav class="hidden lg:flex items-center justify-end space-x-4">
-    <div class="relative">
-      <a class="peer text-zinc-900" href="/blog" aria-label="Visit my blog"
-        >Blog</a
-      >
-      <div
-        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-500 border-b-2 border-zinc-800 mt-1"
-      >
-      </div>
-    </div>
-    <div class="relative">
-      <a
-        class="peer text-zinc-900"
-        href="/projects"
-        aria-label="Check out my other projects on github.">Projects</a
-      >
-      <div
-        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-500 border-b-2 border-zinc-800 mt-1"
-      >
-      </div>
-    </div>
-    <div class="relative">
-      <a
-        class="peer text-zinc-900"
-        href="/about"
-        aria-label="Visit my GitHub profile">About</a
-      >
-      <div
-        class="absolute w-full top-6 opacity-0 peer-hover:opacity-100 transition-opacity duration-500 border-b-2 border-zinc-800 mt-1"
-      >
-      </div>
-    </div>
+    <a class="text-zinc-950" href="/about" aria-label="Visit my GitHub profile">
+      <Button variant="link" className="text-base font-normal">About</Button></a
+    >
   </nav>
 </div>
