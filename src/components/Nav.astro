@@ -28,9 +28,11 @@ import { Button } from "./ui/button";
 <div
   class="flex flex-row py-8 mx-auto justify-between w-full mx-auto px-8 lg:px-0"
 >
-  <a class="flex items-center cursor-pointer text-zinc-950 text-base" href="/">
-    Maximilian Zirps
-  </a>
+  <a class="flex items-center cursor-pointer" href="/">
+    <Button variant="link" className="text-lg p-0 hover:no-underline"
+      >Maximilian Zirps</Button
+    ></a
+  >
   <button class="lg:hidden" data-menu-button aria-label="Open Menu">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -50,21 +52,17 @@ import { Button } from "./ui/button";
   <!-- Desktop navigation -->
   <nav class="hidden lg:flex items-center justify-end space-x-4">
     <a href="/blog" aria-label="Visit my blog">
-      <Button variant="link" className="text-base p-0 font-normal">Blog</Button
+      <Button variant="link" className="text-lg p-0 font-normal">Blog</Button
       ></a
     >
 
-    <a
-      class="text-zinc-950"
-      href="/projects"
-      aria-label="Check out my other projects on github."
-    >
-      <Button variant="link" className="text-base p-0 font-normal"
+    <a href="/projects" aria-label="Check out my other projects on github.">
+      <Button variant="link" className="text-lg p-0 font-normal"
         >Projects</Button
       ></a
     >
-    <a class="text-zinc-950" href="/about" aria-label="Visit my GitHub profile">
-      <Button variant="link" className="text-base p-0 font-normal">About</Button
+    <a href="/about" aria-label="Visit my GitHub profile">
+      <Button variant="link" className="text-lg p-0 font-normal">About</Button
       ></a
     >
   </nav>
@@ -90,19 +88,15 @@ import { Button } from "./ui/button";
       </svg>
     </button>
 
-    <a class="text-zinc-950" href="/blog" aria-label="Visit my blog">
-      <Button variant="link" className="text-base font-normal">Blog</Button></a
+    <a href="/blog" aria-label="Visit my blog">
+      <Button variant="link" className="text-lg font-normal">Blog</Button></a
     >
-    <a
-      class="text-zinc-950"
-      href="/projects"
-      aria-label="Check out my other projects on github."
-    >
-      <Button variant="link" className="text-base font-normal">Projects</Button
+    <a href="/projects" aria-label="Check out my other projects on github.">
+      <Button variant="link" className="text-lg font-normal">Projects</Button
       ></a
     >
-    <a class="text-zinc-950" href="/about" aria-label="Visit my GitHub profile">
-      <Button variant="link" className="text-base font-normal">About</Button></a
+    <a href="/about" aria-label="Visit my GitHub profile">
+      <Button variant="link" className="text-lg font-normal">About</Button></a
     >
   </nav>
 </div>
