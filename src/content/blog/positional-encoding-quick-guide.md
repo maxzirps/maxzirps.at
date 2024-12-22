@@ -3,6 +3,17 @@ title: "Positional Encoding in Transformers"
 pubDate: "15.12.2024"
 heroImage: "/blog/robot-chicken-egg.webp"
 description: "A quick mini-guide about positional encoding in transformers"
+keywords:
+  - transformers
+  - positional encoding
+  - NLP
+  - machine learning
+  - deep learning
+  - sine and cosine functions
+  - word embeddings
+  - sequence modeling
+  - AI
+  - neural networks
 ---
 
 Positional encoding is a way to tell transformer models the position of each word in a sentence. Transformers process all words at once, not one by one like older models (RNNs or LSTMs), so they need extra information to know word order.

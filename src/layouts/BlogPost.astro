@@ -5,7 +5,15 @@ import MainLayout from "./MainLayout.astro";
 import SectionLayout from "./SectionLayout.astro";
 import "katex/dist/katex.min.css";
 import { Button } from "@/components/ui/button";
-const { title, pubDate, heroImage, heroImageDescription, slug } = Astro.props;
+const {
+  title,
+  pubDate,
+  heroImage,
+  heroImageDescription,
+  slug,
+  keywords,
+  description,
+} = Astro.props;
 ---
 
 <style is:global>
@@ -22,6 +30,8 @@ const { title, pubDate, heroImage, heroImageDescription, slug } = Astro.props;
 </style>
 
 <MainLayout title={title}>
+  <meta name="keywords" content={keywords} slot="keywords" />
+  <meta name="description" content={description} slot="description" />
   <SectionLayout>
     <article
       class="prose prose-zinc dark:prose-invert max-w-none prose-code:before:hidden prose-code:after:hidden"
