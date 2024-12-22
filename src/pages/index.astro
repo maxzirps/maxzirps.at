@@ -6,6 +6,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ProjectsPreview from "@/components/ProjectsPreview.astro";
+import { Mail } from "lucide-react";
 ---
 
 <MainLayout title="Maximilian Zirps - Freelance Software Engineer">
@@ -37,6 +38,23 @@ import ProjectsPreview from "@/components/ProjectsPreview.astro";
         >
           See other projects
         </a>
+      </div>
+    </SectionLayout>
+    <SectionLayout>
+      <h2 slot="title" class="text-center">
+        Want to build something together?
+      </h2>
+      <div class="flex flex-col items-center justify-center">
+        <p class="text-center">
+          I'm always excited to create cool new things. <br />Feel free to reach
+          out via email at <a
+            aria-label="Send me an email."
+            href="mailto:hello@maxzirps.at"
+            class={cn(buttonVariants({ variant: "link" }), "p-0 underline")}
+          >
+            hello@maxzirps.at
+          </a>
+        </p>
       </div>
     </SectionLayout>
   </div>
