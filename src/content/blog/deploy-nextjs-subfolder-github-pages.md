@@ -3,6 +3,17 @@ title: "How to Deploy a Next.js Subfolder to GitHub Pages"
 pubDate: "18.12.2024"
 heroImage: "/blog/nextjs-subfolder-github-pages.webp"
 description: "Deploy a Next.js project located in a subfolder to GitHub Pages using pnpm"
+keywords:
+  - Next.js
+  - GitHub Pages
+  - Deployment
+  - pnpm
+  - GitHub Actions
+  - Static Site Generation
+  - Frontend Development
+  - Multi-repo Structure
+  - JavaScript
+  - Web Development
 ---
 
 When working on a project with a multi-repo structure, such as in my [Attachment Lyrics Matcher](https://maxzirps.github.io/attachment-lyrics-matcher/), you might encounter challenges deploying the Next.js frontend to GitHub Pages.
